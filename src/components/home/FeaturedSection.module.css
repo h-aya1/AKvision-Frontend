@@ -1,0 +1,133 @@
+.featuredSection { padding: 64px 0; background-color: #f3f4f6; }
+
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+
+.sectionTitle { font-size: 3rem; font-weight: 800; color: #111827; margin: 0; }
+
+.seeAllLink { font-weight: 700; color: #0b5fb8; text-decoration: none; }
+.seeAllLink:hover { color: #083e7a; }
+
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+
+/* Slider mode to match Hikvision horizontal product rail */
+.slider { position: relative; }
+.track {
+  display: grid;
+  grid-auto-flow: column;
+  /* Pixel-locked width so 3 tiles fit perfectly in a 1440px container (20px padding) */
+  grid-auto-columns: 446px;
+  gap: 32px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+}
+.track::-webkit-scrollbar { display: none; }
+
+.card { scroll-snap-align: start; }
+
+.arrow {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: #fff;
+  box-shadow: var(--shadow-1);
+  color: #111827;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  z-index: 5;
+}
+.arrow:hover { background: #f9fafb; }
+.arrow.disabled { opacity: 0.4; pointer-events: none; }
+.next { right: -16px; left: auto; }
+.arrow { left: -16px; }
+
+.edgeLeft, .edgeRight {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 72px;
+  pointer-events: none;
+}
+.edgeLeft { left: 0; background: linear-gradient(90deg, #f3f4f6 0%, rgba(243,244,246,0) 95%); }
+.edgeRight { right: 0; background: linear-gradient(270deg, #f3f4f6 0%, rgba(243,244,246,0) 95%); }
+
+.card {
+  background-color: transparent;
+  border: none;
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  animation: cardIn 420ms ease both;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card:hover { transform: translateY(-2px); box-shadow: var(--shadow-2); }
+
+.imageWrapper { height: 440px; overflow: hidden; position: relative; border-radius: 22px; }
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.gradient { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.0) 62%, rgba(0,0,0,0.35) 80%, rgba(0,0,0,0.75) 100%); z-index: 1; }
+.titleBar { position: absolute; left: 16px; bottom: 16px; right: 16px; z-index: 2; }
+.card:hover .imageWrapper img {
+  transform: scale(1.05);
+}
+
+.content { display: none; }
+
+.cardTitle { font-size: 1.75rem; font-weight: 800; margin: 0; color: #ffffff; text-shadow: 0 1px 3px rgba(0,0,0,.5); }
+
+.cardLink { color: #93c5fd; font-weight: 800; text-decoration: none; }
+
+.cardLink span { transition: transform 0.3s ease; display: inline-block; }
+.card:hover .cardLink span { transform: translateX(5px); }
+
+/* Hover overlay panel */
+.hoverPanel {
+  position: absolute; inset: 0; z-index: 3; color: #fff;
+  padding: 24px; display: flex; flex-direction: column; justify-content: flex-end;
+  background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.7) 75%, rgba(0,0,0,0.9) 100%);
+  backdrop-filter: blur(1.5px);
+  opacity: 0; transform: translateY(8px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+.hoverTitle { margin: 0 0 8px; font-size: 1.75rem; font-weight: 800; }
+.desc { margin: 0 0 14px; color: rgba(255,255,255,.9); line-height: 1.5; }
+.ctaRow { display: flex; align-items: center; gap: 12px; }
+.roundArrow { position: absolute; right: 18px; bottom: 18px; width: 44px; height: 44px; border-radius: 999px; border: 2px solid rgba(255,255,255,.85); background: rgba(0,0,0,.25); color: #fff; cursor: pointer; }
+.card:hover .hoverPanel { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 1280px) {
+  /* 3-up in ~1280 container -> 398px tiles with 24px gaps */
+  .track { grid-auto-columns: 398px; gap: 24px; }
+  .imageWrapper { height: 400px; }
+}
+@media (max-width: 1200px) {
+  /* Slightly narrower -> 376px tiles with 16px gaps */
+  .track { grid-auto-columns: 376px; gap: 16px; }
+  .imageWrapper { height: 360px; }
+}
+@media (max-width: 1024px) {
+  /* 2-up layout */
+  .track { grid-auto-columns: 484px; }
+  .imageWrapper { height: 340px; }
+}
+@media (max-width: 640px) {
+  .track { grid-auto-columns: 100%; gap: 16px; }
+  .imageWrapper { height: 300px; }
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}

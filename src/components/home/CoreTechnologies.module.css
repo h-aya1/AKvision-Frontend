@@ -1,0 +1,151 @@
+.coreTechSection {
+  padding: 80px 0;
+  background-color: #000;
+  color: white;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 40px;
+}
+
+.sectionTitle {
+  font-size: 36px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.viewAllLink {
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.carouselContainer {
+  margin: 0 auto;
+  position: relative;
+}
+
+.slide {
+  display: flex !important;
+  align-items: center;
+  gap: 60px;
+  background-color: #1a1a1a;
+  border-radius: 16px;
+  padding: 60px;
+}
+
+.slideImage {
+  flex: 0 0 50%;
+}
+.slideImage img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.slideContent {
+  flex: 0 0 50%;
+}
+
+.slideTitle {
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0 0 20px;
+}
+
+.slideDescription {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.learnMoreButton {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.learnMoreButton:hover {
+  background-color: white;
+  color: black;
+}
+
+/* --- ADJUSTED Custom Controls --- */
+.controls {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+}
+
+.swiperButtonPrev,
+.swiperButtonNext {
+  width: 32px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.swiperButtonPrev:hover,
+.swiperButtonNext:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- NEW RULES FOR ARROW POSITIONING --- */
+
+/* Common styles for both arrows */
+.swiperButtonPrev,
+.swiperButtonNext {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.swiperButtonPrev {
+  left: -60px; /* Position the PREV arrow outside on the left */
+}
+
+.swiperButtonNext {
+  right: -60px; /* Position the NEXT arrow outside on the right */
+}
+
+/* Pagination Dots */
+.swiperPagination {
+  position: relative;
+  display: flex;
+  gap: 12px;
+}
+
+.swiperPaginationBullet {
+  width: 8px;
+  height: 8px;
+  background-color: #666;
+  border-radius: 50%;
+  opacity: 1;
+  transition: background-color 0.3s ease;
+}
+
+.swiperPaginationBulletActive {
+  background-color: white;
+}

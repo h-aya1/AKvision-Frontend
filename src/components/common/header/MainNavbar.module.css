@@ -1,0 +1,133 @@
+.mainNavbar {
+  background-color: var(--color-surface);
+  height: 88px;
+  box-shadow: none;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.scrolled {
+  border-bottom-color: transparent;
+  box-shadow: var(--shadow-1);
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.leftArea {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.logoText {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -1px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 32px;
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLinks a {
+  font-size: 16px;
+  font-weight: 700;
+  color: #212121;
+  text-decoration: none;
+  position: relative;
+  padding: 30px 0;
+}
+
+/* The little blue line that appears on hover */
+.navLinks a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--color-primary-strong);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.navLinks a:hover::after {
+  transform: scaleX(1);
+}
+
+.mega {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 840px;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: var(--shadow-2);
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.navItem:hover .mega {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.megaGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.megaColTitle {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.megaLink {
+  display: block;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: 6px 0;
+  font-size: 14px;
+}
+
+.megaLink:hover {
+  color: var(--color-primary-strong);
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.searchButton,
+.contactButton {
+  border: none;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.searchButton { background: none; color: #333; }
+
+.contactButton { background-color: #0b5fb8; color: #fff; padding: 12px 22px; border-radius: 8px; transition: background-color .2s ease; }
+.contactButton:hover { background-color: #0a56a6; }

@@ -1,0 +1,35 @@
+.section {
+  background: #ffffff;
+  padding: 60px 0;
+}
+
+.wrapper {
+  background: #f3f4f6 url("https://via.placeholder.com/1200x260.png?text=Find+a+Distributor") center/cover no-repeat;
+  border-radius: 8px;
+  padding: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  margin: 0 0 8px;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.desc {
+  margin: 0;
+  color: #4b5563;
+}
+
+.cta {
+  background: #0054a6;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+
