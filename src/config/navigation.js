@@ -33,6 +33,7 @@ export const mainNavigation = [
   { id: "solutions", label: "Solutions", path: "/solutions" },
   { id: "support", label: "Support", path: "/support" },
   { id: "partners", label: "Partners", path: "/partners" },
+  { id: "blog", label: "Blog", path: "/blog" },
   { id: "about", label: "About Us", path: "/about" },
 ];
 

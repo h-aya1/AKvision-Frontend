@@ -1,4 +1,5 @@
 import { CalendarIcon, UserIcon, ClockIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import styles from './Blog.module.css';
 
 const Blog = () => {
   const blogPosts = [
@@ -59,61 +60,56 @@ const Blog = () => {
   ];
 
   return (
-    <div className="py-12">
-      <div className="container mx-auto px-4">
+    <div className={styles.blogPage}>
+      <div className="container">
         {/* Page Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold mb-4">Blog & Resources</h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+        <div className={styles.pageHeader}>
+          <h1 className={styles.pageTitle}>Blog & Resources</h1>
+          <p className={styles.pageDescription}>
             Stay updated with the latest security industry news, tips, and expert insights.
           </p>
         </div>
 
         {/* Search Bar */}
-        <div className="max-w-2xl mx-auto mb-12">
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Search articles..."
-              className="w-full px-4 py-3 pl-12 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-            />
-            <MagnifyingGlassIcon className="h-6 w-6 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2" />
-          </div>
+        <div className={styles.searchContainer}>
+          <input
+            type="text"
+            placeholder="Search articles..."
+            className={styles.searchInput}
+          />
+          <MagnifyingGlassIcon className={styles.searchIcon} />
         </div>
 
         {/* Featured Posts */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div className={styles.postsGrid}>
           {blogPosts.map((post) => (
-            <article key={post.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="aspect-w-16 aspect-h-9 bg-gray-200">
-                {/* Placeholder for blog post image */}
-                <div className="flex items-center justify-center h-48 bg-gray-100">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+            <article key={post.id} className={styles.postCard}>
+              <div className={styles.postImageContainer}>
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className={styles.postImage}
+                />
               </div>
-              <div className="p-6">
-                <div className="flex items-center mb-4">
-                  <span className="text-sm text-primary font-semibold">{post.category}</span>
-                  <span className="mx-2">•</span>
-                  <span className="text-sm text-gray-500 flex items-center">
-                    <ClockIcon className="h-4 w-4 mr-1" />
+              <div className={styles.postContent}>
+                <div className={styles.postMeta}>
+                  <span className={styles.postCategory}>{post.category}</span>
+                  <span className={styles.postDivider}>•</span>
+                  <span className={styles.postReadTime}>
+                    <ClockIcon className={styles.postReadTimeIcon} />
                     {post.readTime}
                   </span>
                 </div>
-                <h2 className="text-xl font-bold mb-3">{post.title}</h2>
-                <p className="text-gray-600 mb-4">{post.excerpt}</p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <UserIcon className="h-5 w-5 text-gray-400 mr-2" />
-                    <span className="text-sm text-gray-600">{post.author}</span>
+                <h2 className={styles.postTitle}>{post.title}</h2>
+                <p className={styles.postExcerpt}>{post.excerpt}</p>
+                <div className={styles.postFooter}>
+                  <div className={styles.postAuthor}>
+                    <UserIcon className={styles.postAuthorIcon} />
+                    <span>{post.author}</span>
                   </div>
-                  <div className="flex items-center">
-                    <CalendarIcon className="h-5 w-5 text-gray-400 mr-2" />
-                    <span className="text-sm text-gray-600">{post.date}</span>
+                  <div className={styles.postDate}>
+                    <CalendarIcon className={styles.postDateIcon} />
+                    <span>{post.date}</span>
                   </div>
                 </div>
               </div>
@@ -122,29 +118,26 @@ const Blog = () => {
         </div>
 
         {/* Resources Section */}
-        <div className="bg-gray-50 rounded-lg p-8 mb-16">
-          <h2 className="text-3xl font-bold text-center mb-8">Learning Resources</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className={styles.resourcesSection}>
+          <h2 className={styles.resourcesTitle}>Learning Resources</h2>
+          <div className={styles.resourcesGrid}>
             {resources.map((resource) => (
-              <div key={resource.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-                <div className="aspect-w-16 aspect-h-9 bg-gray-200">
-                  {/* Placeholder for resource thumbnail */}
-                  <div className="flex items-center justify-center h-40 bg-gray-100">
-                    <img
-                      src={resource.thumbnail}
-                      alt={resource.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
+              <div key={resource.id} className={styles.resourceCard}>
+                <div className={styles.resourceImageContainer}>
+                  <img
+                    src={resource.thumbnail}
+                    alt={resource.title}
+                    className={styles.resourceImage}
+                  />
                 </div>
-                <div className="p-6">
-                  <div className="flex items-center mb-2">
-                    <span className="text-sm text-primary font-semibold">{resource.type}</span>
-                    <span className="mx-2">•</span>
-                    <span className="text-sm text-gray-500">{resource.duration}</span>
+                <div className={styles.resourceContent}>
+                  <div className={styles.resourceMeta}>
+                    <span className={styles.resourceType}>{resource.type}</span>
+                    <span className={styles.postDivider}>•</span>
+                    <span className={styles.resourceDuration}>{resource.duration}</span>
                   </div>
-                  <h3 className="text-lg font-bold mb-4">{resource.title}</h3>
-                  <button className="w-full bg-primary text-white py-2 rounded hover:bg-primary-dark transition-colors">
+                  <h3 className={styles.resourceTitle}>{resource.title}</h3>
+                  <button className={styles.resourceButton}>
                     Access Resource
                   </button>
                 </div>
@@ -154,16 +147,16 @@ const Blog = () => {
         </div>
 
         {/* Newsletter Subscription */}
-        <div className="bg-primary rounded-lg p-8 text-center text-white">
-          <h2 className="text-2xl font-bold mb-4">Stay Updated</h2>
-          <p className="mb-6">Subscribe to our newsletter for the latest security insights and updates.</p>
-          <div className="max-w-md mx-auto flex gap-4">
+        <div className={styles.newsletterSection}>
+          <h2 className={styles.newsletterTitle}>Stay Updated</h2>
+          <p className={styles.newsletterDescription}>Subscribe to our newsletter for the latest security insights and updates.</p>
+          <div className={styles.newsletterForm}>
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-2 rounded-md text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
+              className={styles.newsletterInput}
             />
-            <button className="bg-white text-primary px-6 py-2 rounded-md font-semibold hover:bg-gray-100 transition-colors">
+            <button className={styles.newsletterButton}>
               Subscribe
             </button>
           </div>

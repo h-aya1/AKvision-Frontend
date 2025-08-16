@@ -5,6 +5,7 @@ import HomePage from "../pages/HomePage";
 import ProductsPage from "../pages/ProductsPage";
 import SupportPage from "../pages/SupportPage";
 import PartnersPage from "../pages/PartnersPage";
+import Blog from "../components/Blog/Blog";
 
 // Contact pages
 import SalesContactPage from "../pages/contact/SalesContactPage";
@@ -29,6 +30,7 @@ const AppRoutes = () => {
 
         <Route path="support" element={<SupportPage />} />
         <Route path="partners" element={<PartnersPage />} />
+        <Route path="blog" element={<Blog />} />
         {/* <Route path="about" element={<AboutPage />} /> */}
         
         {/* Contact Routes */}
