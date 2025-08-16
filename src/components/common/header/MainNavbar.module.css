@@ -1,38 +1,38 @@
 .mainNavbar {
-  background-color: var(--color-surface);
+  background-color: rgba(255, 255, 255, 0.922);
   height: 88px;
-  box-shadow: none;
   border-bottom: 1px solid var(--color-border);
-}
-
-.scrolled {
-  border-bottom-color: transparent;
-  box-shadow: var(--shadow-1);
 }
 
 .container {
   height: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content:space-around; /* ✅ Center everything */
   align-items: center;
+  gap: 70px; /* Space between logo, nav, and search */
 }
 
-.leftArea {
+.logo {
   display: flex;
   align-items: center;
-  gap: 24px;
+  text-decoration: none;
 }
 
 .logoText {
   font-size: 28px;
-  font-weight: 800;
-  color: var(--color-text);
-  letter-spacing: -1px;
+  font-weight: 500;
+  color: #ae3f3d;
+  letter-spacing: -2px;
+}
+
+.logoImg {
+  height: 70px;
+  /* margin-right: 100px; */
 }
 
 .navLinks {
   display: flex;
-  gap: 32px;
+  gap: 50px;
 }
 
 .navItem {
@@ -40,15 +40,15 @@
 }
 
 .navLinks a {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 500;
+
   color: #212121;
   text-decoration: none;
   position: relative;
   padding: 30px 0;
 }
 
-/* The little blue line that appears on hover */
 .navLinks a::after {
   content: "";
   position: absolute;
@@ -112,22 +112,38 @@
   color: var(--color-primary-strong);
 }
 
-.navActions {
+/* ✅ Search Box */
+.searchBox {
   display: flex;
   align-items: center;
-  gap: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  background-color: #fff;
+  width: 160px; /* initial size */
+  transition: width 0.3s ease; /* smooth expand */
 }
 
-.searchButton,
-.contactButton {
+.searchBox:hover,
+.searchBox:focus-within {
+  width: 240px; /* expanded size */
+}
+
+.searchIcon {
+  width: 18px;
+  height: 18px;
+  color: #555;
+}
+
+.searchInput {
   border: none;
-  cursor: pointer;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
+  outline: none;
+  padding-left: 6px;
   font-size: 14px;
+  color: #333;
+  width: 100%;
 }
 
-.searchButton { background: none; color: #333; }
-
-.contactButton { background-color: #0b5fb8; color: #fff; padding: 12px 22px; border-radius: 8px; transition: background-color .2s ease; }
-.contactButton:hover { background-color: #0a56a6; }
+.searchInput::placeholder {
+  color: #999;
+}

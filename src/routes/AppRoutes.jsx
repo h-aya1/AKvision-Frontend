@@ -3,9 +3,14 @@ import { Routes, Route } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import HomePage from "../pages/HomePage";
 import ProductsPage from "../pages/ProductsPage";
-
 import SupportPage from "../pages/SupportPage";
 import PartnersPage from "../pages/PartnersPage";
+
+// Contact pages
+import SalesContactPage from "../pages/contact/SalesContactPage";
+import SubscribePage from "../pages/contact/SubscribePage";
+import TechnicalSupportPage from "../pages/contact/TechnicalSupportPage";
+import FaqChatPage from "../pages/contact/FaqChatPage";
 // import AboutPage from "../pages/AboutPage/";
 
 // We can create and import other pages here later
@@ -25,6 +30,14 @@ const AppRoutes = () => {
         <Route path="support" element={<SupportPage />} />
         <Route path="partners" element={<PartnersPage />} />
         {/* <Route path="about" element={<AboutPage />} /> */}
+        
+        {/* Contact Routes */}
+        <Route path="contact">
+          <Route path="sales" element={<SalesContactPage />} />
+          <Route path="subscribe" element={<SubscribePage />} />
+          <Route path="technical" element={<TechnicalSupportPage />} />
+          <Route path="faq" element={<FaqChatPage />} />
+        </Route>
       </Route>
     </Routes>
   );

@@ -32,15 +32,15 @@
 
 .navLinks a {
   text-decoration: none;
-  color: #374151;
+  color: #ae3f3d;
   padding: 8px 0;
   border-bottom: 2px solid transparent;
   transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 .navLinks a:hover {
-  color: #0054a6; /* Hikvision's brand blue */
-  border-bottom-color: #0054a6;
+  color: #ae3f3d; /* Hikvision's brand blue */
+  border-bottom-color: #ae3f3dac;
 }
 
 .navActions {

@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/common/header/Navbar";
 import Footer from "../components/common/Footer/Footer";
+import FloatingButtons from "../components/common/floating/FloatingButtons";
 
 import SearchOverlay from "../components/common/search/SearchOverlay";
 
@@ -18,6 +19,7 @@ const MainLayout = () => {
       <Footer />
 
       <SearchOverlay />
+      <FloatingButtons />
     </div>
   );
 };
