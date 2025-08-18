@@ -1,13 +1,16 @@
-import { CalendarIcon, UserIcon, ClockIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import { useState } from 'react';
+import { CalendarIcon, UserIcon, ClockIcon, MagnifyingGlassIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 import styles from './Blog.module.css';
 
 const Blog = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+
   const blogPosts = [
     {
       id: 1,
       title: 'The Future of AI in Video Surveillance',
       excerpt: 'Explore how artificial intelligence is revolutionizing the security industry with smart detection and analytics.',
-      image: '/blog/ai-surveillance.jpg',
+      image: 'https://picsum.photos/seed/1/600/400',
       category: 'Technology',
       author: 'John Smith',
       date: 'March 15, 2024',
@@ -17,7 +20,7 @@ const Blog = () => {
       id: 2,
       title: 'Top 5 Security Tips for Retail Stores',
       excerpt: 'Essential security measures every retail business should implement to protect assets and employees.',
-      image: '/blog/retail-security.jpg',
+      image: 'https://picsum.photos/seed/2/600/400',
       category: 'Industry',
       author: 'Sarah Johnson',
       date: 'March 10, 2024',
@@ -27,11 +30,31 @@ const Blog = () => {
       id: 3,
       title: 'Understanding IP Camera Resolution Standards',
       excerpt: 'A comprehensive guide to camera resolutions and how to choose the right one for your needs.',
-      image: '/blog/camera-resolution.jpg',
+      image: 'https://picsum.photos/seed/3/600/400',
       category: 'Guide',
       author: 'Michael Chen',
       date: 'March 5, 2024',
       readTime: '6 min read'
+    },
+    {
+      id: 4,
+      title: 'Enhancing Workplace Safety with Advanced CCTV',
+      excerpt: 'Discover how modern CCTV systems can improve employee safety and prevent workplace incidents.',
+      image: 'https://picsum.photos/seed/4/600/400',
+      category: 'Safety',
+      author: 'Emily White',
+      date: 'February 28, 2024',
+      readTime: '5 min read'
+    },
+    {
+      id: 5,
+      title: 'The Role of Thermal Cameras in Industrial Monitoring',
+      excerpt: 'An in-depth look at how thermal imaging is used for predictive maintenance and quality control.',
+      image: 'https://picsum.photos/seed/5/600/400',
+      category: 'Technology',
+      author: 'David Green',
+      date: 'February 22, 2024',
+      readTime: '7 min read'
     }
   ];
 
@@ -41,23 +64,34 @@ const Blog = () => {
       title: 'Camera Installation Guide',
       type: 'Video Tutorial',
       duration: '15 minutes',
-      thumbnail: '/resources/installation-guide.jpg'
+      thumbnail: 'https://picsum.photos/seed/6/400/300'
     },
     {
       id: 2,
       title: 'Security System Buyer\'s Guide',
       type: 'eBook',
       duration: '25 pages',
-      thumbnail: '/resources/buyers-guide.jpg'
+      thumbnail: 'https://picsum.photos/seed/7/400/300'
     },
     {
       id: 3,
       title: 'Network Setup Tutorial',
       type: 'Video Tutorial',
       duration: '20 minutes',
-      thumbnail: '/resources/network-setup.jpg'
+      thumbnail: 'https://picsum.photos/seed/8/400/300'
     }
   ];
+
+  const filteredPosts = blogPosts.filter(post =>
+    post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    post.category.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const filteredResources = resources.filter(resource =>
+    resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    resource.type.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className={styles.blogPage}>
@@ -76,13 +110,53 @@ const Blog = () => {
             type="text"
             placeholder="Search articles..."
             className={styles.searchInput}
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
           <MagnifyingGlassIcon className={styles.searchIcon} />
         </div>
 
-        {/* Featured Posts */}
+        {/* Featured Post */}
+        {filteredPosts.length > 0 && (
+          <article
+            key={filteredPosts[0].id}
+            className={`${styles.postCard} ${styles.featuredPostCard}`}>
+            <div className={styles.postImageContainer}>
+              <img
+                src={filteredPosts[0].image}
+                alt={filteredPosts[0].title}
+                className={styles.postImage}
+              />
+            </div>
+            <div className={styles.postContent}>
+              <div className={styles.postMeta}>
+                <span className={styles.postCategory}>{filteredPosts[0].category}</span>
+                <span className={styles.postDivider}>•</span>
+                <span className={styles.postReadTime}>
+                  <ClockIcon className={styles.postReadTimeIcon} />
+                  {filteredPosts[0].readTime}
+                </span>
+              </div>
+              <h2 className={styles.postTitle}>{filteredPosts[0].title}</h2>
+              <p className={styles.postExcerpt}>{filteredPosts[0].excerpt}</p>
+              <div className={styles.postFooter}>
+                <div className={styles.postAuthor}>
+                  <UserIcon className={styles.postAuthorIcon} />
+                  <span>{filteredPosts[0].author}</span>
+                </div>
+                <div className={styles.postDate}>
+                  <CalendarIcon className={styles.postDateIcon} />
+                  <span>{filteredPosts[0].date}</span>
+                </div>
+              </div>
+              <button className={styles.readMoreButton}>Read More</button>
+            </div>
+          </article>
+        )}
+
+        {/* Posts Grid */}
         <div className={styles.postsGrid}>
-          {blogPosts.map((post) => (
+          {filteredPosts.slice(1).map((post) => (
             <article key={post.id} className={styles.postCard}>
               <div className={styles.postImageContainer}>
                 <img
@@ -112,16 +186,24 @@ const Blog = () => {
                     <span>{post.date}</span>
                   </div>
                 </div>
+                <button className={styles.readMoreButton}>Read More</button>
               </div>
             </article>
           ))}
         </div>
 
+        {filteredPosts.length === 0 && (
+          <div className={styles.noResultsContainer}>
+            <h3 className={styles.noResultsTitle}>No Articles Found</h3>
+            <p className={styles.noResultsText}>Try adjusting your search terms or check back later for new content.</p>
+          </div>
+        )}
+
         {/* Resources Section */}
         <div className={styles.resourcesSection}>
           <h2 className={styles.resourcesTitle}>Learning Resources</h2>
           <div className={styles.resourcesGrid}>
-            {resources.map((resource) => (
+            {filteredResources.map((resource) => (
               <div key={resource.id} className={styles.resourceCard}>
                 <div className={styles.resourceImageContainer}>
                   <img
@@ -146,16 +228,26 @@ const Blog = () => {
           </div>
         </div>
 
+        {filteredResources.length === 0 && searchTerm && (
+          <div className={styles.noResultsContainer}>
+            <h3 className={styles.noResultsTitle}>No Resources Found</h3>
+            <p className={styles.noResultsText}>We couldn't find any resources matching your search.</p>
+          </div>
+        )}
+
         {/* Newsletter Subscription */}
         <div className={styles.newsletterSection}>
           <h2 className={styles.newsletterTitle}>Stay Updated</h2>
           <p className={styles.newsletterDescription}>Subscribe to our newsletter for the latest security insights and updates.</p>
           <div className={styles.newsletterForm}>
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className={styles.newsletterInput}
-            />
+            <div className={styles.newsletterInputContainer}>
+              <EnvelopeIcon className={styles.newsletterInputIcon} />
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className={styles.newsletterInput}
+              />
+            </div>
             <button className={styles.newsletterButton}>
               Subscribe
             </button>

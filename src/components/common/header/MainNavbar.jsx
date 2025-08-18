@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { mainNavigation } from "../../../config/navigation";
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline"; // ✅ Search icon
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import styles from "./MainNavbar.module.css";
 
 const MainNavbar = () => {
@@ -29,13 +29,15 @@ const MainNavbar = () => {
                 <div className={styles.mega}>
                   <div className={styles.megaGrid}>
                     {item.mega.map((col, idx) => (
-                      <div key={idx}>
+                      <div key={idx} className={styles.megaCol}>
                         <div className={styles.megaColTitle}>{col.title}</div>
-                        {col.links.map((l, i) => (
-                          <Link key={i} to={l.path} className={styles.megaLink}>
-                            {l.label}
-                          </Link>
-                        ))}
+                        <div className={styles.megaColLinks}>
+                          {col.links.map((l, i) => (
+                            <Link key={i} to={l.path} className={styles.megaLink}>
+                              {l.label}
+                            </Link>
+                          ))}
+                        </div>
                       </div>
                     ))}
                   </div>

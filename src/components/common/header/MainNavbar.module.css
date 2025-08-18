@@ -1,15 +1,15 @@
 .mainNavbar {
-  background-color: rgba(255, 255, 255, 0.922);
-  height: 88px;
-  border-bottom: 1px solid var(--color-border);
+  background-color: #ffffff;
+  height: 89px;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .container {
   height: 100%;
   display: flex;
-  justify-content:space-around; /* ✅ Center everything */
+  justify-content: space-between;
   align-items: center;
-  gap: 70px; /* Space between logo, nav, and search */
+  gap: 70px;
 }
 
 .logo {
@@ -27,7 +27,6 @@
 
 .logoImg {
   height: 70px;
-  /* margin-right: 100px; */
 }
 
 .navLinks {
@@ -42,13 +41,14 @@
 .navLinks a {
   font-size: 18px;
   font-weight: 500;
-
-  color: #212121;
-  text-decoration: none;
+  color: #0f0f0f;
+  text-decoration: none; /* Changed from dashed */
   position: relative;
   padding: 30px 0;
+  transition: color 0.3s ease; /* Added transition for color change */
 }
 
+/* --- Underline Effect --- */
 .navLinks a::after {
   content: "";
   position: absolute;
@@ -56,77 +56,98 @@
   left: 0;
   right: 0;
   height: 3px;
-  background-color: var(--color-primary-strong);
+  background-color: #e62129;
   transform: scaleX(0);
-  transition: transform 0.3s ease;
+  transform-origin: center; /* Ensures the line grows from the center */
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother easing */
 }
 
-.navLinks a:hover::after {
+.navLinks a:hover::after,
+.navItem:hover > a::after {
   transform: scaleX(1);
 }
 
-.mega {
-  position: absolute;
-  left: 0;
-  top: 100%;
-  width: 840px;
-  background: #ffffff;
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-  box-shadow: var(--shadow-2);
-  padding: 20px;
-  opacity: 0;
-  transform: translateY(6px);
-  pointer-events: none;
-  transition: opacity 160ms ease, transform 160ms ease;
+.navItem:hover > a {
+  color: #e62129;
 }
 
+/* --- Mega Menu --- */
+.mega {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 100%;
+  min-width: 600px;
+  max-width: 1000px;
+  background: #ffffff;
+  border-top: 1px solid #e0e0e0;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  opacity: 0;
+  pointer-events: none;
+  /* Updated Transform and Transition for smoothness */
+  transform: translateX(-50%) translateY(20px); /* Start slightly lower */
+  transition: opacity 300ms ease, transform 300ms ease;
+  z-index: 100;
+}
+
+/* --- Mega Menu Hover State --- */
 .navItem:hover .mega {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0); /* Move to final position */
   pointer-events: auto;
 }
 
 .megaGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
 }
 
 .megaColTitle {
-  margin: 0 0 8px;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--color-text);
+  margin: 0 0 15px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333333;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Smoother appearance for links within the mega menu */
+.megaColLinks {
+  display: flex;
+  flex-direction: column;
 }
 
 .megaLink {
   display: block;
-  color: var(--color-text);
+  color: #666666;
   text-decoration: none;
-  padding: 6px 0;
+  padding: 8px 0;
   font-size: 14px;
+  transition: color 0.2s ease, padding-left 0.3s ease; /* Added padding transition */
 }
 
 .megaLink:hover {
-  color: var(--color-primary-strong);
+  color: #e62129;
+  padding-left: 5px; /* Adds a subtle indent on hover */
 }
 
-/* ✅ Search Box */
+/* --- Search Box --- */
 .searchBox {
   display: flex;
   align-items: center;
-  border: 1px solid var(--color-border);
+  border: 1px solid #e0e0e0;
   border-radius: 6px;
   padding: 6px 10px;
   background-color: #fff;
-  width: 160px; /* initial size */
-  transition: width 0.3s ease; /* smooth expand */
+  width: 160px;
+  transition: width 0.3s ease;
 }
 
 .searchBox:hover,
 .searchBox:focus-within {
-  width: 240px; /* expanded size */
+  width: 240px;
 }
 
 .searchIcon {
@@ -142,6 +163,7 @@
   font-size: 14px;
   color: #333;
   width: 100%;
+  background-color: transparent;
 }
 
 .searchInput::placeholder {

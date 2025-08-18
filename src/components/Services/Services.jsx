@@ -1,132 +1,99 @@
-import { WrenchScrewdriverIcon, ClipboardDocumentCheckIcon, AcademicCapIcon, PhoneIcon } from '@heroicons/react/24/outline';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { WrenchScrewdriverIcon } from '@heroicons/react/24/outline';
+import styles from './Services.module.css';
 
 const Services = () => {
-  const services = [
+  const products = [
     {
-      id: 'installation',
-      title: 'Professional Installation',
-      icon: <WrenchScrewdriverIcon className="h-12 w-12 text-primary" />,
-      description: 'Expert installation of security systems by certified technicians.',
-      features: [
-        'Site survey and planning',
-        'Professional mounting and wiring',
-        'System configuration and testing',
-        'Post-installation support'
-      ]
+      name: 'Security Cameras',
+      imageUrl: 'https://picsum.photos/seed/camera/600/400',
     },
     {
-      id: 'maintenance',
-      title: 'Maintenance & Support',
-      icon: <ClipboardDocumentCheckIcon className="h-12 w-12 text-primary" />,
-      description: 'Regular maintenance and support services to ensure optimal system performance.',
-      features: [
-        'Scheduled maintenance visits',
-        '24/7 technical support',
-        'System health monitoring',
-        'Emergency repairs'
-      ]
+      name: 'Network Routers',
+      imageUrl: 'https://picsum.photos/seed/router/600/400',
     },
     {
-      id: 'training',
-      title: 'Training & Consultation',
-      icon: <AcademicCapIcon className="h-12 w-12 text-primary" />,
-      description: 'Comprehensive training programs for system operators and security staff.',
-      features: [
-        'Operator training sessions',
-        'Security best practices',
-        'System optimization tips',
-        'Custom workflow setup'
-      ]
+      name: 'Ethernet Switches',
+      imageUrl: 'https://picsum.photos/seed/switch/600/400',
     },
     {
-      id: 'support',
-      title: 'Customer Support',
-      icon: <PhoneIcon className="h-12 w-12 text-primary" />,
-      description: 'Dedicated customer support team available to assist you.',
-      features: [
-        'Phone and email support',
-        'Remote troubleshooting',
-        'Warranty service',
-        'Product upgrades'
-      ]
-    }
+      name: 'Cables & Accessories',
+      imageUrl: 'https://picsum.photos/seed/cables/600/400',
+    },
   ];
 
   return (
-    <div className="py-12">
-      <div className="container mx-auto px-4">
-        {/* Page Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold mb-4">Our Services</h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Comprehensive support services to ensure your security system operates at peak performance.
-          </p>
+    <div className={styles.servicesPage}>
+      {/* Page Header */}
+      <section className={styles.pageHeader}>
+        <div className={styles.headerContent}>
+          <div className={styles.headerText}>
+            <h1 className={styles.pageTitle}>Our Services</h1>
+            <p className={styles.pageSubtitle}>
+              We provide top-tier electronic equipment and expert installation services to meet your needs.
+            </p>
+          </div>
+          <div className={styles.headerImageContainer}>
+            <img src="https://picsum.photos/seed/services/600/400" alt="Professional Services" className={styles.headerImage} />
+          </div>
         </div>
+      </section>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {services.map((service) => (
-            <div key={service.id} className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
-              <div className="flex items-center mb-6">
-                <div className="bg-primary/10 p-3 rounded-lg mr-4">
-                  {service.icon}
-                </div>
-                <h2 className="text-2xl font-bold">{service.title}</h2>
+      {/* Products Section */}
+      <section className={styles.productsSection}>
+        <h2 className={styles.sectionTitle}>Products We Sell & Install</h2>
+        <div className={styles.productsGrid}>
+          {products.map((product) => (
+            <div key={product.name} className={styles.productCard}>
+              <img src={product.imageUrl} alt={product.name} className={styles.productImage} />
+              <div className={styles.productOverlay}>
+                <h3 className={styles.productName}>{product.name}</h3>
               </div>
-              
-              <p className="text-gray-600 mb-6">{service.description}</p>
-              
-              <ul className="space-y-3">
-                {service.features.map((feature, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-primary rounded-full mt-2 mr-3"></span>
-                    <span className="text-gray-700">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <button className="mt-8 w-full bg-primary text-white py-3 rounded-lg hover:bg-primary-dark transition-colors">
-                Learn More
-              </button>
             </div>
           ))}
         </div>
+        
+      </section>
 
-        {/* Service Process */}
-        <div className="bg-gray-50 rounded-lg p-8 mb-16">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Service Process</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              { step: 1, title: 'Initial Consultation', description: 'Discuss your needs and requirements' },
-              { step: 2, title: 'Site Assessment', description: 'Evaluate your location and existing systems' },
-              { step: 3, title: 'Service Delivery', description: 'Execute the service with expert precision' },
-              { step: 4, title: 'Follow-up Support', description: 'Ensure complete satisfaction and system optimization' }
-            ].map((step) => (
-              <div key={step.step} className="text-center">
-                <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-                  {step.step}
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
+      {/* Installation Section */}
+      <section className={styles.installationSection}>
+        <div className={styles.installationContent}>
+          <div className={styles.installationIcon}>
+            <WrenchScrewdriverIcon />
+          </div>
+          <h2 className={styles.sectionTitle}>Professional Installation</h2>
+          <p className={styles.installationDescription}>
+            Our certified technicians ensure your systems are installed correctly and efficiently, with services including site surveys, professional mounting, system configuration, and post-installation support.
+          </p>
+        </div>
+      </section>
+
+      {/* Service Process Section */}
+      <section className={styles.processSection}>
+        <h2 className={styles.sectionTitle}>Our Service Process</h2>
+        <div className={styles.processSteps}>
+          {[
+            { step: 1, title: 'Consultation' },
+            { step: 2, title: 'Site Assessment' },
+            { step: 3, title: 'Installation' },
+            { step: 4, title: 'Follow-up' },
+          ].map((step, index) => (
+            <React.Fragment key={step.step}>
+              <div className={styles.processStep}>
+                <div className={styles.stepNumber}>{step.step}</div>
+                <h3 className={styles.stepTitle}>{step.title}</h3>
               </div>
-            ))}
-          </div>
+              {index < 3 && <div className={styles.stepConnector}></div>}
+            </React.Fragment>
+          ))}
         </div>
-
-        {/* Contact Section */}
-        <div className="bg-primary rounded-lg p-8 text-center text-white">
-          <h2 className="text-2xl font-bold mb-4">Need Assistance?</h2>
-          <p className="mb-6">Our team is ready to help you with any service-related inquiries.</p>
-          <div className="flex justify-center space-x-4">
-            <button className="bg-white text-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
-              Schedule Service
-            </button>
-            <button className="border-2 border-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-primary transition-colors">
-              Contact Support
-            </button>
-          </div>
+        <div className={styles.ctaContainer}>
+          <Link to="/contact/sales" className={styles.ctaButton}>
+            Contact Sales
+          </Link>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

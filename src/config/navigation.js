@@ -30,8 +30,29 @@ export const mainNavigation = [
       },
     ],
   },
-  { id: "solutions", label: "Solutions", path: "/solutions" },
-  { id: "support", label: "Support", path: "/support" },
+  { id: "services", label: "Service", path: "/services" },
+  { 
+    id: "support", 
+    label: "Support", 
+    path: "/support",
+    mega: [
+      {
+        title: "Download",
+        links: [
+          { label: "Firmware", path: "/support/download/firmware" },
+          { label: "SDK", path: "/support/download/sdk" },
+          { label: "Software", path: "/support/download/software" },
+        ],
+      },
+      {
+        title: "How to's",
+        links: [
+          { label: "Guide", path: "/support/howto/guide" },
+          { label: "Video", path: "/support/howto/video" },
+        ],
+      },
+    ],
+  },
   { id: "partners", label: "Partners", path: "/partners" },
   { id: "blog", label: "Blog", path: "/blog" },
   { id: "about", label: "About Us", path: "/about" },

@@ -1,0 +1,249 @@
+.aboutPage {
+  color: #333;
+}
+
+.section {
+  padding: 5rem 1rem;
+}
+
+/* Intro Section */
+.introSection {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/seed/business/1920/1080');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: white;
+}
+
+.introContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mainTitle {
+  font-size: 3.5rem; /* 56px */
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.25rem; /* 20px */
+  opacity: 0.9;
+}
+
+/* Vision Section */
+.visionSection {
+  background-color: #f9fafb;
+  text-align: center;
+}
+
+/* Mission Section */
+.visionMissionContainer {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.missionSection {
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.missionVisionIcon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto 1.5rem;
+  color: #ae3f3d;
+}
+
+.sectionText {
+  max-width: 800px;
+  margin: 1rem auto 0;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: #4b5563;
+}
+
+/* Why Choose Us Section */
+.whyChooseUsSection {
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2.5rem; /* 40px */
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.whyChooseUsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.whyChooseUsCard {
+  padding: 2rem;
+}
+
+.whyChooseUsIcon {
+  width: 4rem; /* 64px */
+  height: 4rem; /* 64px */
+  margin: 0 auto 1.5rem;
+  color: #ae3f3d;
+}
+
+.whyChooseUsTitle {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+/* History Section */
+.historySection {
+  background-color: #ffffff;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background-color: #e5e7eb;
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: 2rem;
+  width: 50%;
+  padding: 0 2rem;
+}
+
+.timelineItem:nth-child(odd) {
+  left: 0;
+}
+
+.timelineItem:nth-child(even) {
+  left: 50%;
+  flex-direction: row-reverse;
+}
+
+.timelineContent {
+  width: 45%;
+}
+
+.timelineIcon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #ae3f3d;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Values Section */
+.valuesSection {
+  background-color: #f9fafb;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.valueCard {
+  background-color: white;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Innovation Section */
+.innovationSection {
+  background-color: #ffffff;
+}
+
+.innovationContent {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.innovationText {
+  flex: 1;
+}
+
+.innovationImageContainer {
+  flex: 1;
+}
+
+.innovationImage {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Global Presence Section - Styles removed */
+
+/* Responsive */
+@media (max-width: 768px) {
+  .innovationContent {
+    flex-direction: column;
+  }
+
+    .whyChooseUsGrid, .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline::before {
+    left: 1.5rem;
+  }
+
+  .timelineItem, .timelineItem:nth-child(odd) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timelineContent {
+    width: 100%;
+    padding-left: 3rem;
+  }
+
+  .timelineIcon {
+    left: 0;
+  }
+
+  .mainTitle {
+    font-size: 2.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+}

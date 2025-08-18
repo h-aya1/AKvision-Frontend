@@ -1,127 +1,122 @@
-import { TrophyIcon, UserGroupIcon, BuildingOffice2Icon, CheckBadgeIcon } from '@heroicons/react/24/outline';
+import React from 'react';
+import styles from './About.module.css';
+import { EyeIcon, LightBulbIcon, ShieldCheckIcon, UserGroupIcon, GlobeAltIcon, BeakerIcon, ClockIcon, RocketLaunchIcon } from '@heroicons/react/24/outline';
 
 const About = () => {
-  const stats = [
-    { id: 1, number: '10+', label: 'Years Experience' },
-    { id: 2, number: '1000+', label: 'Clients Worldwide' },
-    { id: 3, number: '50+', label: 'Countries Served' },
-    { id: 4, number: '24/7', label: 'Support Available' }
-  ];
-
-  const teamMembers = [
-    {
-      id: 1,
-      name: 'John Smith',
-      position: 'Chief Executive Officer',
-      image: '/team/ceo.jpg', // Placeholder image path
-      bio: 'With over 20 years of experience in security systems.'
-    },
-    {
-      id: 2,
-      name: 'Sarah Johnson',
-      position: 'Chief Technology Officer',
-      image: '/team/cto.jpg', // Placeholder image path
-      bio: 'Leading innovation in AI-powered surveillance solutions.'
-    },
-    {
-      id: 3,
-      name: 'Michael Chen',
-      position: 'Head of Product Development',
-      image: '/team/head-product.jpg', // Placeholder image path
-      bio: 'Expert in creating user-friendly security products.'
-    }
-  ];
-
-  const certifications = [
-    { id: 1, name: 'ISO 9001:2015', description: 'Quality Management System' },
-    { id: 2, name: 'ISO 27001', description: 'Information Security Management' },
-    { id: 3, name: 'UL Certified', description: 'Safety Standards Compliance' }
-  ];
-
   return (
-    <div className="py-12">
-      <div className="container mx-auto px-4">
-        {/* Company Overview */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold mb-4">About AKvision</h1>
-          <p className="text-gray-600 max-w-3xl mx-auto">
-            AKvision is a leading provider of innovative security solutions, dedicated to making the world safer through cutting-edge surveillance technology and exceptional service.
+    <div className={styles.aboutPage}>
+      {/* Intro Section */}
+      <section className={`${styles.section} ${styles.introSection}`}>
+        <div className={styles.introContent}>
+          <h1 className={styles.mainTitle}>About AKvision</h1>
+          <p className={styles.subtitle}>
+            Pioneering the future of security with innovative technology and unwavering commitment. We are dedicated to providing solutions that protect and empower our clients.
           </p>
         </div>
+      </section>
 
-        {/* Mission & Vision */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
-            <p className="text-gray-600">
-              To provide innovative and reliable security solutions that protect people, property, and assets while delivering exceptional customer service and maintaining the highest standards of quality.
-            </p>
-          </div>
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold mb-4">Our Vision</h2>
-            <p className="text-gray-600">
-              To be the global leader in security technology, recognized for our innovation, reliability, and commitment to making the world a safer place through advanced surveillance solutions.
-            </p>
-          </div>
+      {/* Vision Section */}
+      <section className={`${styles.section} ${styles.visionSection}`}>
+        <div className={styles.visionMissionContainer}>
+          <div className={styles.missionVisionIcon}><EyeIcon /></div>
+          <h2 className={styles.sectionTitle}>Our Vision</h2>
+          <p className={styles.sectionText}>To be the global leader in security solutions, creating a safer world through continuous innovation and unwavering commitment to our clients.</p>
         </div>
+      </section>
 
-        {/* Company Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-          {stats.map((stat) => (
-            <div key={stat.id} className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">{stat.number}</div>
-              <div className="text-gray-600">{stat.label}</div>
+      {/* Mission Section */}
+      <section className={`${styles.section} ${styles.missionSection}`}>
+        <div className={styles.visionMissionContainer}>
+          <div className={styles.missionVisionIcon}><RocketLaunchIcon /></div>
+          <h2 className={styles.sectionTitle}>Our Mission</h2>
+          <p className={styles.sectionText}>To provide state-of-the-art, reliable, and user-friendly security systems that protect what matters most to our customers, backed by exceptional service and support.</p>
+        </div>
+      </section>
+
+      {/* Company History Section */}
+      <section className={`${styles.section} ${styles.historySection}`}>
+        <h2 className={styles.sectionTitle}>Our Journey</h2>
+        <div className={styles.timeline}>
+          <div className={styles.timelineItem}>
+            <div className={styles.timelineIcon}><ClockIcon /></div>
+            <div className={styles.timelineContent}>
+              <h3>2010 - The Beginning</h3>
+              <p>AKvision was founded with the goal of revolutionizing the security industry.</p>
             </div>
-          ))}
-        </div>
-
-        {/* Leadership Team */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-8">Our Leadership Team</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {teamMembers.map((member) => (
-              <div key={member.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div className="aspect-w-1 aspect-h-1 bg-gray-200">
-                  {/* Placeholder for team member image */}
-                  <div className="flex items-center justify-center h-64 bg-gray-100">
-                    <UserGroupIcon className="h-16 w-16 text-gray-400" />
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">{member.name}</h3>
-                  <p className="text-primary font-semibold mb-2">{member.position}</p>
-                  <p className="text-gray-600">{member.bio}</p>
-                </div>
-              </div>
-            ))}
+          </div>
+          <div className={styles.timelineItem}>
+            <div className={styles.timelineIcon}><BeakerIcon /></div>
+            <div className={styles.timelineContent}>
+              <h3>2015 - First Breakthrough</h3>
+              <p>Launched our first AI-powered surveillance system, setting new industry standards.</p>
+            </div>
+          </div>
+          <div className={styles.timelineItem}>
+            <div className={styles.timelineIcon}><GlobeAltIcon /></div>
+            <div className={styles.timelineContent}>
+              <h3>2020 - Global Expansion</h3>
+              <p>Expanded operations to over 50 countries, serving clients worldwide.</p>
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* Certifications */}
-        <div className="bg-gray-50 rounded-lg p-8 mb-16">
-          <h2 className="text-3xl font-bold text-center mb-8">Our Certifications</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {certifications.map((cert) => (
-              <div key={cert.id} className="flex items-center bg-white rounded-lg p-6 shadow-md">
-                <CheckBadgeIcon className="h-12 w-12 text-primary mr-4" />
-                <div>
-                  <h3 className="text-lg font-bold">{cert.name}</h3>
-                  <p className="text-gray-600">{cert.description}</p>
-                </div>
-              </div>
-            ))}
+      {/* Core Values Section */}
+      <section className={`${styles.section} ${styles.valuesSection}`}>
+        <h2 className={styles.sectionTitle}>Our Core Values</h2>
+        <div className={styles.valuesGrid}>
+          <div className={styles.valueCard}><h4>Integrity</h4></div>
+          <div className={styles.valueCard}><h4>Innovation</h4></div>
+          <div className={styles.valueCard}><h4>Customer-Centricity</h4></div>
+          <div className={styles.valueCard}><h4>Excellence</h4></div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className={`${styles.section} ${styles.whyChooseUsSection}`}>
+        <h2 className={styles.sectionTitle}>Why Choose Us?</h2>
+        <div className={styles.whyChooseUsGrid}>
+            <div className={styles.whyChooseUsCard}>
+              <div className={styles.whyChooseUsIcon}><ShieldCheckIcon /></div>
+              <h3 className={styles.whyChooseUsTitle}>Reliability</h3>
+              <p>Dependable solutions that you can trust, 24/7.</p>
+            </div>
+            <div className={styles.whyChooseUsCard}>
+              <div className={styles.whyChooseUsIcon}><LightBulbIcon /></div>
+              <h3 className={styles.whyChooseUsTitle}>Innovation</h3>
+              <p>Cutting-edge technology to stay ahead of threats.</p>
+            </div>
+            <div className={styles.whyChooseUsCard}>
+              <div className={styles.whyChooseUsIcon}><UserGroupIcon /></div>
+              <h3 className={styles.whyChooseUsTitle}>Expert Team</h3>
+              <p>A dedicated team of professionals with years of experience.</p>
+            </div>
+        </div>
+      </section>
+
+      {/* Innovation & Technology Section */}
+      <section className={`${styles.section} ${styles.innovationSection}`}>
+        <div className={styles.innovationContent}>
+          <div className={styles.innovationText}>
+            <h2 className={styles.sectionTitle}>Innovation & Technology</h2>
+            <p>We are committed to pushing the boundaries of what's possible. Our dedicated R&D team works tirelessly to develop next-generation security solutions, from advanced AI analytics to robust hardware, ensuring we always stay one step ahead.</p>
+          </div>
+          <div className={styles.innovationImageContainer}>
+            <img src="https://picsum.photos/seed/innovation/600/400" alt="Innovation" className={styles.innovationImage} />
           </div>
         </div>
+      </section>
 
-        {/* Call to Action */}
-        <div className="bg-primary rounded-lg p-8 text-center text-white">
-          <h2 className="text-2xl font-bold mb-4">Join Our Team</h2>
-          <p className="mb-6">We're always looking for talented individuals to join our growing team.</p>
-          <button className="bg-white text-primary px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
-            View Career Opportunities
-          </button>
+      {/* Global Presence Section
+      <section className={`${styles.section} ${styles.globalSection}`}>
+        <h2 className={styles.sectionTitle}>Our Global Presence</h2>
+        <p className={styles.globalSubtitle}>Operating in over 50 countries, we provide localized support on a global scale.</p>
+        <div className={styles.visionMissionContainer}>
+          <GlobeAltIcon className={styles.mapIcon} />
         </div>
-      </div>
+      </section>
+      */}
+
     </div>
   );
 };

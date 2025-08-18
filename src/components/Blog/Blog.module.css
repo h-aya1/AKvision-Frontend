@@ -72,6 +72,32 @@
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
+.featuredPostCard {
+  grid-column: 1 / -1; 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 64px;
+}
+
+.featuredPostCard .postImageContainer {
+  height: 100%;
+  max-height: 400px;
+}
+
+.featuredPostCard .postTitle {
+  font-size: 2rem;
+}
+
+.featuredPostCard .postExcerpt {
+  font-size: 1.1rem;
+}
+
+.featuredPostCard .postContent {
+  padding: 48px;
+}
+
 .postImageContainer {
   height: 200px;
   overflow: hidden;
@@ -137,6 +163,24 @@
   line-height: 1.6;
 }
 
+.readMoreButton {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.readMoreButton:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
 .postFooter {
   display: flex;
   justify-content: space-between;
@@ -155,6 +199,28 @@
   height: 18px;
   margin-right: 6px;
   color: #9ca3af;
+}
+
+.noResultsContainer {
+  text-align: center;
+  padding: 60px 24px;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  margin-bottom: 64px;
+}
+
+.noResultsTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.noResultsText {
+  font-size: 1rem;
+  color: #4b5563;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 .resourcesSection {
@@ -244,11 +310,15 @@
 }
 
 .newsletterSection {
-  background-color: var(--color-primary);
-  border-radius: 12px;
+  background-color: #5C2D2D; 
+  /* background-image: gradient(circle at 1px 3px, rgba(255,255,255,0.1) 4px, transparent 0); */
+  background-size: 20px 20px;
+  border-radius: 4px;
   padding: 48px;
   text-align: center;
   color: white;
+  position: relative;
+  overflow: hidden;
 }
 
 .newsletterTitle {
@@ -265,46 +335,80 @@
   margin-right: auto;
 }
 
+
 .newsletterForm {
   display: flex;
   max-width: 500px;
   margin: 0 auto;
   gap: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 3px;
+}
+
+.newsletterInputContainer {
+  position: relative;
+  flex: 1;
+}
+
+.newsletterInputIcon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+  height: 25px;
+  color: #df6060;
 }
 
 .newsletterInput {
-  flex: 1;
-  padding: 14px 20px;
-  border-radius: 6px;
-  border: none;
+  width: 100%;
+  padding: 14px 20px 14px 48px;
+  border-radius: 4px;
+  border: 1px solid transparent;
   font-size: 1rem;
+  background-color: #775353;
+  color: #111827;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .newsletterInput:focus {
   outline: none;
+  /* border-color: var(--color-primary-strong); */
+  box-shadow: 0 0 0 3px #8e3737;
 }
 
 .newsletterButton {
   padding: 14px 24px;
-  background-color: white;
+  background-color: rgb(72, 8, 8);
   color: var(--color-primary);
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .newsletterButton:hover {
-  background-color: #f3f4f6;
+  background-color: #f3f4f66b;
+  transform: translateY(-2px);
 }
 
 /* Responsive styles */
+
 @media (max-width: 768px) {
   .pageTitle {
     font-size: 2.25rem;
   }
   
+  .featuredPostCard {
+    grid-template-columns: 1fr;
+  }
+
+  .featuredPostCard .postImageContainer {
+    height: 250px;
+  }
+
   .postsGrid, .resourcesGrid {
     grid-template-columns: 1fr;
   }
