@@ -1,136 +1,148 @@
-import React, { useState, useRef, useEffect } from "react";
-import styles from "./Newsroom.module.css";
-
-// Data with the correct video URLs
-const newsItems = [
-  {
-    category: "Success Story",
-    title:
-      "Cambodian hotel resort dazzles the coast with majestic Hikvision LED display",
-    tags: "Cambodia, Commercial Displays, Hospitality",
-    videoUrl:
-      "https://www.hikvision.com/content/dam/hikvision/en/videos/success-story/Cambodian-Hotel-Resort-Dazzles-the-Coast-with-Majestic-Hikvision-LED-Display/Cambodian-Hotel-Resort-Dazzles-the-Coast-with-Majestic-Hikvision-LED-Display.mp4",
-  },
-  {
-    category: "Success Story",
-    title:
-      "Hikvision helps Vialia Vigo Shopping Center boost safety, efficiency and customer satisfaction",
-    tags: "Retail, Security and Intelligence, Spain",
-    videoUrl:
-      "https://www.hikvision.com/content/dam/hikvision/en/videos/success-story/Vialia-Vigo-Shopping-Center-Boosts-Safety/Vialia-Vigo-Shopping-Center-Boosts-Safety.mp4",
-  },
-  {
-    category: "Success Story",
-    title:
-      "Crafting a digital oasis: a Saudi university’s journey to smart education",
-    tags: "Education, Saudi Arabia, Security and Intelligence",
-    videoUrl:
-      "https://www.hikvision.com/content/dam/hikvision/en/videos/success-story/A-Saudi-University-s-Journey-to-Smart-Education/A-Saudi-University-s-Journey-to-Smart-Education.mp4",
-  },
-];
+import React, { useState } from "react";
+import styles from "./Newsroom.module.css"; // Changed to CSS Module import
+import {
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  Play,
+  Pause,
+} from "lucide-react";
 
 const Newsroom = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const videoRefs = useRef([]);
+  const [isPlaying, setIsPlaying] = useState(false);
 
-  const goToSlide = (index) => {
-    const newIndex = (index + newsItems.length) % newsItems.length;
-    setActiveIndex(newIndex);
+  const featuredStory = {
+    category: "Success Story",
+    title:
+      "Crafting a digital oasis: a Saudi university's journey to smart education",
+    tags: ["Education", "Saudi Arabia", "Security and Intelligence"],
+    image: "https://ext.same-assets.com/2463856760/32746476.jpeg",
   };
 
-  const playPauseCurrent = () => {
-    const video = videoRefs.current[activeIndex];
-    if (video) {
-      video.paused ? video.play() : video.pause();
-    }
-  };
+  const newsItems = [
+    {
+      title:
+        "Bringing Invisible science to life: Hikvision's caring partnership with Wonder Hub",
+      category: "Blog",
+      date: "June 26, 2025",
+      image: "https://ext.same-assets.com/2463856760/146643026.jpeg",
+    },
+    {
+      title:
+        "Hikvision launches new DeepinViewX bullet camera for enhanced perimeter protection",
+      category: "Latest News",
+      date: "July 01, 2025",
+      image: "https://ext.same-assets.com/2463856760/3136571966.jpeg",
+    },
+    {
+      title:
+        "Hikvision launches brand-new WonderHub, simplifying smart building management",
+      category: "Latest News",
+      date: "July 02, 2025",
+      image: "https://ext.same-assets.com/2463856760/2060804859.jpeg",
+    },
+  ];
 
-  // This effect ensures that when the slide changes, all other videos are paused and reset.
-  useEffect(() => {
-    videoRefs.current.forEach((video, index) => {
-      if (video && index !== activeIndex) {
-        video.pause();
-        video.currentTime = 0;
-      }
-    });
-  }, [activeIndex]);
+  const sportsStory = {
+    title:
+      "Putting video on the podium: Improving sporting safety and fan experiences",
+    category: "Blog",
+    date: "June 30, 2025",
+    image: "https://ext.same-assets.com/2463856760/1689404548.jpeg",
+  };
 
   return (
     <section className={styles.newsroomSection}>
-      <div className={`container ${styles.header}`}>
-        <h2 className={styles.sectionTitle}>Newsroom</h2>
-        <a href="#" className={styles.viewAllLink}>
-          View more →
-        </a>
-      </div>
-
-      <div className={styles.carouselContainer}>
-        <div className={styles.slider}>
-          {newsItems.map((item, index) => {
-            // This logic determines the CSS class for positioning the slides
-            let positionClass = styles.offscreenSlide;
-            if (index === activeIndex) {
-              positionClass = styles.activeSlide;
-            } else if (
-              index ===
-              (activeIndex - 1 + newsItems.length) % newsItems.length
-            ) {
-              positionClass = styles.prevSlide;
-            } else if (index === (activeIndex + 1) % newsItems.length) {
-              positionClass = styles.nextSlide;
-            }
-
-            return (
-              <article
-                className={`${styles.slide} ${positionClass}`}
-                key={index}
-              >
-                <video
-                  ref={(el) => (videoRefs.current[index] = el)}
-                  className={styles.backgroundVideo}
-                  src={item.videoUrl}
-                  muted
-                  loop
-                  playsInline
-                />
-                <div className={styles.slideContent}>
-                  <p className={styles.category}>{item.category}</p>
-                  <h3 className={styles.title}>{item.title}</h3>
-                  <p className={styles.tags}>{item.tags}</p>
-                </div>
-              </article>
-            );
-          })}
-        </div>
-
-        {/* --- Custom Controls --- */}
-        <div className={styles.controls}>
-          <button
-            className={styles.navButton}
-            onClick={() => goToSlide(activeIndex - 1)}
-          >
-            &lt;
+      <div className="container">
+        {" "}
+        {/* Using global container */}
+        {/* Header */}
+        <div className={styles.header}>
+          <h2 className={styles.sectionTitle}>Newsroom</h2>
+          <button className={styles.viewMoreButton}>
+            View more <ArrowRight className={styles.arrowIcon} />
           </button>
-          <div className={styles.pagination}>
-            {newsItems.map((_, index) => (
+        </div>
+        {/* Featured Story Carousel */}
+        <div className={styles.featuredStory}>
+          <div className={styles.featuredImageWrapper}>
+            <img
+              src={featuredStory.image}
+              alt={featuredStory.title}
+              className={styles.imageFull}
+            />
+            <div className={styles.gradientOverlay}></div>
+            <div className={styles.featuredText}>
+              <div className={styles.categoryText}>
+                {featuredStory.category}
+              </div>
+              <h3 className={styles.featuredTitle}>{featuredStory.title}</h3>
+              <div className={styles.tags}>
+                {featuredStory.tags.map((tag, index) => (
+                  <span key={index}>
+                    {tag}
+                    {index < featuredStory.tags.length - 1 && ","}
+                  </span>
+                ))}
+              </div>
+            </div>
+            {/* Carousel Controls */}
+            <div className={styles.carouselControls}>
+              <button className={styles.controlButton}>
+                <ChevronLeft />
+              </button>
+              <div className={styles.dots}>
+                <div className={`${styles.dot} ${styles.dotActive}`}></div>
+                <div className={styles.dot}></div>
+                <div className={styles.dot}></div>
+              </div>
+              <button className={styles.controlButton}>
+                <ChevronRight />
+              </button>
               <button
-                key={index}
-                className={`${styles.dot} ${
-                  index === activeIndex ? styles.dotActive : ""
-                }`}
-                onClick={() => goToSlide(index)}
-              ></button>
+                onClick={() => setIsPlaying(!isPlaying)}
+                className={styles.controlButton}
+              >
+                {isPlaying ? <Pause /> : <Play />}
+              </button>
+            </div>
+          </div>
+        </div>
+        {/* News Grid */}
+        <div className={styles.newsGrid}>
+          {/* Sports Story */}
+          <div className={styles.sportsStory}>
+            <img
+              src={sportsStory.image}
+              alt={sportsStory.title}
+              className={styles.sportsImage}
+            />
+            <div className={styles.gradientOverlay}></div>
+            <div className={styles.sportsText}>
+              <div className={styles.categoryText}>
+                {sportsStory.category} | {sportsStory.date}
+              </div>
+              <h3 className={styles.sportsTitle}>{sportsStory.title}</h3>
+            </div>
+          </div>
+          {/* News Items */}
+          <div className={styles.newsItemsList}>
+            {newsItems.map((item, index) => (
+              <div key={index} className={styles.newsItem}>
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className={styles.newsItemImage}
+                />
+                <div className={styles.newsItemText}>
+                  <div className={styles.categoryTextSmall}>
+                    {item.category} | {item.date}
+                  </div>
+                  <h4 className={styles.newsItemTitle}>{item.title}</h4>
+                </div>
+              </div>
             ))}
           </div>
-          <button
-            className={styles.navButton}
-            onClick={() => goToSlide(activeIndex + 1)}
-          >
-            &gt;
-          </button>
-          <button className={styles.navButton} onClick={playPauseCurrent}>
-            ❚❚
-          </button>
         </div>
       </div>
     </section>

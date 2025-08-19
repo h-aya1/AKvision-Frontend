@@ -14,15 +14,13 @@ const slides = [
     title: "EaseEngine",
     description:
       "Hikvision's EaseEngine transforms complex systems into intuitive experiences. With this technology, Hikvision's serverless management platforms eliminate operational overhead, intelligent design creates seamless user journeys, and systems are deployed flexibly across virtually any environment, delivering the ease and simplicity users expect.",
-    imgUrl:
-      "https://www.hikvision.com/content/dam/hikvision/en/images/home-page/core-technologies/ease-engine-m.jpg",
+    imgUrl: "src/assets/cam.png",
   },
   {
     title: "eDVR Series",
     description:
       "Discover the efficiency and reliability of Hikvision's eDVR series. These devices offer enhanced video storage and management capabilities, ensuring your security footage is always accessible and secure with advanced solid-state drive technology.",
-    imgUrl:
-      "https://www.hikvision.com/content/dam/hikvision/en/images/home-page/core-technologies/edvr-m.jpg",
+    imgUrl: "https://ext.same-assets.com/2463856760/146643026.jpeg",
   },
   // Add more slides here if needed
 ];
@@ -34,7 +32,7 @@ const CoreTechnologies = () => {
       {/* The container now wraps everything inside */}
       <div className="container">
         <div className={styles.header}>
-          <h2 className={styles.sectionTitle}>Core Technologies</h2>
+          <h2 className={styles.sectionTitle}> Technologies</h2>
           <a href="#" className={styles.viewAllLink}>
             View more →
           </a>

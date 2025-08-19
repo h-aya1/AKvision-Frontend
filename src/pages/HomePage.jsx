@@ -5,7 +5,7 @@ import AboutSection from "../components/home/AboutSection";
 
 import CoreTechnologies from "../components/home/CoreTechnologies";
 import Newsroom from "../components/home/Newsroom";
-import WhereToBuy from "../components/home/WhereToBuy";
+
 // We will add NewsSection etc. later
 
 const HomePage = () => {
@@ -16,7 +16,7 @@ const HomePage = () => {
     
       <CoreTechnologies />
       <Newsroom />
-      <WhereToBuy />
+      
       <AboutSection />
       {/* Add other sections here */}
     </div>

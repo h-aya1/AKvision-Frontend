@@ -1,179 +1,134 @@
-import { useState } from 'react';
-import { DocumentTextIcon } from '@heroicons/react/24/outline';
+import React from "react";
+import { NavLink, Outlet } from "react-router-dom"; // Using NavLink for active styles
+import styles from "./Legal.module.css";
 
+// This is the main layout for all legal pages (Privacy, Terms, etc.)
 const Legal = () => {
-  const [activeTab, setActiveTab] = useState('privacy');
-
-  const tabs = [
-    { id: 'privacy', label: 'Privacy Policy' },
-    { id: 'terms', label: 'Terms of Service' },
-    { id: 'returns', label: 'Return Policy' }
-  ];
-
   return (
-    <div className="py-12">
-      <div className="container mx-auto px-4">
-        {/* Page Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">Legal Information</h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Important information about our policies and terms of service.
-          </p>
-        </div>
-
-        {/* Tab Navigation */}
-        <div className="flex justify-center mb-8">
-          <div className="border border-gray-200 rounded-lg flex">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                className={`px-6 py-3 text-sm font-medium ${activeTab === tab.id
-                  ? 'bg-primary text-white'
-                  : 'text-gray-500 hover:text-gray-700'}`}
-                onClick={() => setActiveTab(tab.id)}
+    <div className={styles.legalPage}>
+      <div className="container">
+        <div className={styles.layoutGrid}>
+          {/* Sidebar Navigation */}
+          <aside className={styles.sidebar}>
+            <nav className={styles.sidebarNav}>
+              {/* NavLink automatically adds an "active" class to the matched link */}
+              <NavLink
+                to="/legal/privacy-policy"
+                className={({ isActive }) =>
+                  isActive
+                    ? `${styles.navLink} ${styles.active}`
+                    : styles.navLink
+                }
               >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-        </div>
+                Privacy Policy
+              </NavLink>
+              <NavLink
+                to="/legal/terms-of-use"
+                className={({ isActive }) =>
+                  isActive
+                    ? `${styles.navLink} ${styles.active}`
+                    : styles.navLink
+                }
+              >
+                Terms of Use
+              </NavLink>
+              <NavLink
+                to="/legal/cookie-policy"
+                className={({ isActive }) =>
+                  isActive
+                    ? `${styles.navLink} ${styles.active}`
+                    : styles.navLink
+                }
+              >
+                Cookie Policy
+              </NavLink>
+            </nav>
+          </aside>
 
-        {/* Content Sections */}
-        <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-8">
-          <DocumentTextIcon className="h-12 w-12 text-primary mx-auto mb-6" />
-
-          {/* Privacy Policy */}
-          {activeTab === 'privacy' && (
-            <div>
-              <h2 className="text-2xl font-bold mb-6">Privacy Policy</h2>
-              
-              <div className="space-y-6 text-gray-600">
-                <section>
-                  <h3 className="text-lg font-semibold mb-3">1. Information Collection</h3>
-                  <p>
-                    We collect information that you provide directly to us, including when you create an account,
-                    make a purchase, sign up for our newsletter, or contact us for support. This may include:
-                  </p>
-                  <ul className="list-disc list-inside mt-2 ml-4">
-                    <li>Name and contact information</li>
-                    <li>Billing and shipping information</li>
-                    <li>Account credentials</li>
-                    <li>Communication preferences</li>
-                  </ul>
-                </section>
-
-                <section>
-                  <h3 className="text-lg font-semibold mb-3">2. Use of Information</h3>
-                  <p>
-                    We use the collected information to provide, maintain, and improve our services,
-                    process your transactions, communicate with you, and send you marketing communications
-                    (subject to your preferences).
-                  </p>
-                </section>
-
-                <section>
-                  <h3 className="text-lg font-semibold mb-3">3. Information Sharing</h3>
-                  <p>
-                    We do not sell your personal information. We may share your information with:
-                  </p>
-                  <ul className="list-disc list-inside mt-2 ml-4">
-                    <li>Service providers who assist in our operations</li>
-                    <li>Law enforcement when required by law</li>
-                    <li>Business partners with your consent</li>
-                  </ul>
-                </section>
-              </div>
-            </div>
-          )}
-
-          {/* Terms of Service */}
-          {activeTab === 'terms' && (
-            <div>
-              <h2 className="text-2xl font-bold mb-6">Terms of Service</h2>
-              
-              <div className="space-y-6 text-gray-600">
-                <section>
-                  <h3 className="text-lg font-semibold mb-3">1. Acceptance of Terms</h3>
-                  <p>
-                    By accessing and using our website and services, you agree to be bound by these
-                    Terms of Service and all applicable laws and regulations.
-                  </p>
-                </section>
-
-                <section>
-                  <h3 className="text-lg font-semibold mb-3">2. Use License</h3>
-                  <p>
-                    Permission is granted to temporarily download one copy of the materials for personal,
-                    non-commercial transitory viewing only.
-                  </p>
-                  <ul className="list-disc list-inside mt-2 ml-4">
-                    <li>This is a license, not a transfer of title</li>
-                    <li>You may not modify or copy the materials</li>
-                    <li>You may not use the materials for commercial purposes</li>
-                  </ul>
-                </section>
-
-                <section>
-                  <h3 className="text-lg font-semibold mb-3">3. Disclaimer</h3>
-                  <p>
-                    The materials on our website are provided on an 'as is' basis. We make no
-                    warranties, expressed or implied, and hereby disclaim and negate all other warranties
-                    including, without limitation, implied warranties or conditions of merchantability.
-                  </p>
-                </section>
-              </div>
-            </div>
-          )}
-
-          {/* Return Policy */}
-          {activeTab === 'returns' && (
-            <div>
-              <h2 className="text-2xl font-bold mb-6">Return Policy</h2>
-              
-              <div className="space-y-6 text-gray-600">
-                <section>
-                  <h3 className="text-lg font-semibold mb-3">1. Return Period</h3>
-                  <p>
-                    We accept returns within 30 days of purchase for most products. Items must be unused
-                    and in their original packaging with all accessories included.
-                  </p>
-                </section>
-
-                <section>
-                  <h3 className="text-lg font-semibold mb-3">2. Return Process</h3>
-                  <ol className="list-decimal list-inside mt-2 ml-4 space-y-2">
-                    <li>Contact our customer service to initiate a return</li>
-                    <li>Receive a Return Merchandise Authorization (RMA) number</li>
-                    <li>Package the item securely with all original materials</li>
-                    <li>Include the RMA number on the outside of the package</li>
-                    <li>Ship the item to the provided return address</li>
-                  </ol>
-                </section>
-
-                <section>
-                  <h3 className="text-lg font-semibold mb-3">3. Refund Process</h3>
-                  <p>
-                    Once we receive and inspect the returned item, we will process your refund within
-                    5-7 business days. The refund will be issued to the original payment method.
-                  </p>
-                  <ul className="list-disc list-inside mt-2 ml-4">
-                    <li>Original shipping charges are non-refundable</li>
-                    <li>Return shipping costs are the responsibility of the customer</li>
-                    <li>Restocking fees may apply for certain items</li>
-                  </ul>
-                </section>
-              </div>
-            </div>
-          )}
-
-          {/* Last Updated */}
-          <div className="mt-8 pt-6 border-t border-gray-200 text-sm text-gray-500 text-center">
-            Last updated: March 2024
-          </div>
+          {/* Main Content Area */}
+          <main className={styles.mainContent}>
+            {/* The Outlet will render the specific legal content (e.g., PrivacyPolicyContent) */}
+            <Outlet />
+          </main>
         </div>
       </div>
     </div>
   );
 };
+
+// This is the specific content for the Privacy Policy
+export const PrivacyPolicyContent = () => {
+  return (
+    <div className={styles.contentWrapper}>
+      <h1 className={styles.pageTitle}>Privacy Policy</h1>
+      <p className={styles.lastUpdated}>Last updated: August 20, 2025</p>
+
+      <p>
+        Welcome to AK VISTION's Privacy Policy. This policy describes how we
+        collect, use, process, and disclose your information, including personal
+        data, in conjunction with your access to and use of the AK VISTION
+        website and services.
+      </p>
+
+      <h2 className={styles.sectionTitle}>1. Information We Collect</h2>
+      <p>There are three general categories of information we collect.</p>
+      <h3 className={styles.subSectionTitle}>
+        1.1 Information You Give to Us.
+      </h3>
+      <p>
+        We ask for and collect the following personal information about you when
+        you use the AK VISTION Platform. This information is necessary for the
+        adequate performance of the contract between you and us and to allow us
+        to comply with our legal obligations.
+      </p>
+      <ul>
+        <li>
+          <strong>Account Information.</strong> When you sign up for an AK
+          VISTION Account, we require certain information such as your first
+          name, last name, email address, and date of birth.
+        </li>
+        <li>
+          <strong>Communications with AK VISTION.</strong> When you communicate
+          with AK VISTION or use the AK VISTION Platform to communicate with
+          other Members, we collect information about your communication and any
+          information you choose to provide.
+        </li>
+      </ul>
+
+      <h2 className={styles.sectionTitle}>
+        2. How We Use Information We Collect
+      </h2>
+      <p>
+        We use, store, and process information, including personal information,
+        about you to provide, understand, improve, and develop the AK VISTION
+        Platform, create and maintain a trusted and safer environment and comply
+        with our legal obligations.
+      </p>
+
+      <h2 className={styles.sectionTitle}>3. Sharing & Disclosure</h2>
+      <p>
+        We will not share your personal data with third parties without your
+        consent, except as necessary to provide our services or as required by
+        law. We may share information with our trusted partners for analytics,
+        marketing, and other business purposes.
+      </p>
+    </div>
+  );
+};
+
+// You can create similar components for TermsOfUseContent, CookiePolicyContent etc.
+export const TermsOfUseContent = () => (
+  <div className={styles.contentWrapper}>
+    <h1 className={styles.pageTitle}>Terms of Use</h1>
+    <p>Content for Terms of Use will go here...</p>
+  </div>
+);
+
+export const CookiePolicyContent = () => (
+  <div className={styles.contentWrapper}>
+    <h1 className={styles.pageTitle}>Cookie Policy</h1>
+    <p>Content for Cookie Policy will go here...</p>
+  </div>
+);
 
 export default Legal;

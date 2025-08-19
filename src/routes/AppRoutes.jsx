@@ -11,6 +11,9 @@ import Firmware from "../components/Support/Download/Firmware";
 import SDK from "../components/Support/Download/SDK";
 import Software from "../components/Support/Download/Software";
 
+import Guide from "../components/Support/HowTo/Guide";
+import Video from "../components/Support/HowTo/Video";
+
 // Contact pages
 import SalesContactPage from "../components/contact/SalesContactPage";
 import SubscribePage from "../components/contact/SubscribePage";
@@ -20,6 +23,12 @@ import AboutPage from "../pages/AboutPage";
 
 // We can create and import other pages here later
 // import ProductsPage from '../pages/ProductsPage';
+
+import LegalPage, {
+  PrivacyPolicyContent,
+  TermsOfUseContent,
+  CookiePolicyContent,
+} from "../components/Legal/Legal";
 
 const AppRoutes = () => {
   return (
@@ -33,23 +42,35 @@ const AppRoutes = () => {
         <Route path="products" element={<ProductsPage />} />
         <Route path="services" element={<ServicesPage />} />
 
-        <Route path="support" element={<SupportPage />} >
+        <Route path="support" element={<SupportPage />}>
           <Route path="download">
             <Route path="firmware" element={<Firmware />} />
             <Route path="sdk" element={<SDK />} />
             <Route path="software" element={<Software />} />
           </Route>
+          <Route path="howto">
+            <Route path="guide" element={<Guide />} />
+            <Route path="video" element={<Video />} />
+          </Route>
         </Route>
         <Route path="partners" element={<PartnersPage />} />
         <Route path="blog" element={<Blog />} />
         <Route path="about" element={<AboutPage />} />
-        
+
         {/* Contact Routes */}
         <Route path="contact">
           <Route path="sales" element={<SalesContactPage />} />
           <Route path="subscribe" element={<SubscribePage />} />
           <Route path="technical" element={<TechnicalSupportPage />} />
           <Route path="faq" element={<FaqChatPage />} />
+        </Route>
+
+        {/* Legal Routes */}
+
+        <Route path="legal" element={<LegalPage />}>
+          <Route path="privacy-policy" element={<PrivacyPolicyContent />} />
+          <Route path="terms-of-use" element={<TermsOfUseContent />} />
+          <Route path="cookie-policy" element={<CookiePolicyContent />} />
         </Route>
       </Route>
     </Routes>
