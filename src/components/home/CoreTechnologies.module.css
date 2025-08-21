@@ -80,7 +80,6 @@
   color: black;
 }
 
-/* --- ADJUSTED Custom Controls --- */
 .controls {
   position: absolute;
   bottom: 20px;
@@ -111,26 +110,22 @@
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* --- NEW RULES FOR ARROW POSITIONING --- */
-
-/* Common styles for both arrows */
 .swiperButtonPrev,
 .swiperButtonNext {
   position: absolute;
-  top: 50%; /* Center vertically */
+  top: 50%;
   transform: translateY(-50%);
   z-index: 10;
 }
 
 .swiperButtonPrev {
-  left: -60px; /* Position the PREV arrow outside on the left */
+  left: -60px;
 }
 
 .swiperButtonNext {
-  right: -60px; /* Position the NEXT arrow outside on the right */
+  right: -60px;
 }
 
-/* Pagination Dots */
 .swiperPagination {
   position: relative;
   display: flex;

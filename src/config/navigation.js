@@ -31,9 +31,9 @@ export const mainNavigation = [
     ],
   },
   { id: "services", label: "Service", path: "/services" },
-  { 
-    id: "support", 
-    label: "Support", 
+  {
+    id: "support",
+    label: "Support",
     path: "/support",
     mega: [
       {
@@ -53,9 +53,7 @@ export const mainNavigation = [
       },
     ],
   },
-  { id: "partners", label: "Partners", path: "/partners" },
+  // { id: "partners", label: "Partners", path: "/partners" },
   { id: "blog", label: "Blog", path: "/blog" },
   { id: "about", label: "About Us", path: "/about" },
 ];
-
-

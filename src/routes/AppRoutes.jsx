@@ -5,7 +5,7 @@ import HomePage from "../pages/HomePage";
 import ProductsPage from "../pages/ProductsPage";
 import ServicesPage from "../pages/ServicesPage";
 import SupportPage from "../pages/SupportPage";
-import PartnersPage from "../pages/PartnersPage";
+// import PartnersPage from "../pages/PartnersPage";
 import Blog from "../components/Blog/Blog";
 import Firmware from "../components/Support/Download/Firmware";
 import SDK from "../components/Support/Download/SDK";
@@ -53,7 +53,7 @@ const AppRoutes = () => {
             <Route path="video" element={<Video />} />
           </Route>
         </Route>
-        <Route path="partners" element={<PartnersPage />} />
+        {/* <Route path="partners" element={<PartnersPage />} /> */}
         <Route path="blog" element={<Blog />} />
         <Route path="about" element={<AboutPage />} />
 

@@ -13,13 +13,13 @@ const slides = [
   {
     title: "EaseEngine",
     description:
-      "Hikvision's EaseEngine transforms complex systems into intuitive experiences. With this technology, Hikvision's serverless management platforms eliminate operational overhead, intelligent design creates seamless user journeys, and systems are deployed flexibly across virtually any environment, delivering the ease and simplicity users expect.",
+      "akvision's EaseEngine transforms complex systems into intuitive experiences. With this technology, akvision's serverless management platforms eliminate operational overhead, intelligent design creates seamless user journeys, and systems are deployed flexibly across virtually any environment, delivering the ease and simplicity users expect.",
     imgUrl: "src/assets/cam.png",
   },
   {
     title: "eDVR Series",
     description:
-      "Discover the efficiency and reliability of Hikvision's eDVR series. These devices offer enhanced video storage and management capabilities, ensuring your security footage is always accessible and secure with advanced solid-state drive technology.",
+      "Discover the efficiency and reliability of akvision's eDVR series. These devices offer enhanced video storage and management capabilities, ensuring your security footage is always accessible and secure with advanced solid-state drive technology.",
     imgUrl: "https://ext.same-assets.com/2463856760/146643026.jpeg",
   },
   // Add more slides here if needed
