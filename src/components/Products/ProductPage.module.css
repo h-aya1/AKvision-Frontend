@@ -6,7 +6,7 @@
   color: white;
   background-size: cover;
   background-position: center;
-  border-bottom: 5px solid var(--color-primary); /* Brand accent */
+  border-bottom: 5px solid var(--color-primary);
 }
 
 .heroOverlay {
@@ -143,7 +143,7 @@
   transform: translate(-50%, -50%) scale(1.05) !important;
 }
 
-/* --- MODAL STYLES --- */
+/* --- THE FINAL, CORRECTED MODAL STYLES --- */
 .modalOverlay {
   position: fixed;
   inset: 0;
@@ -151,30 +151,50 @@
   display: grid;
   place-items: center;
   z-index: 1000;
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .modalContent {
   position: relative;
   background: white;
-  padding: 2.5rem;
   border-radius: 16px;
-  max-width: 600px;
+  max-width: 800px;
   width: 90%;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  padding: 2.5rem;
+  align-items: center;
+}
+
+.modalImage {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.modalText {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Make text container take full height of its grid cell */
 }
 
 .modalContent h2 {
   font-size: 2rem;
   font-weight: 700;
+  margin-top: 0;
   margin-bottom: 0.5rem;
+  color: #111827;
 }
 
 .modalContent p {
   margin-bottom: 1rem;
   line-height: 1.6;
   color: #4b5563;
+  flex-grow: 1; /* Pushes the button to the bottom */
 }
 
 .closeModalButton {
@@ -193,21 +213,26 @@
   display: grid;
   place-items: center;
   padding-bottom: 4px;
+  transition: background-color 0.2s ease;
+}
+.closeModalButton:hover {
+  background-color: #e5e7eb;
 }
 
 .buyNowButton {
-  display: inline-block;
-  background-color: var(--color-primary);
-  color: white;
+  display: block;
+  background-color: #ae3f3d;
+  color: #ffffff;
   padding: 0.85rem 2rem;
   margin-top: 1.5rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
+  text-align: center;
   transition: all 0.3s ease;
 }
 .buyNowButton:hover {
-  background-color: var(--color-primary-strong);
+  background-color: #912927;
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(174, 63, 61, 0.2);
 }

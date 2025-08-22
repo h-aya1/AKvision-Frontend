@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import styles from "./ProductPage.module.css"; // Uses the shared CSS
+import styles from "./ProductPage.module.css";
 import AnimateOnScroll from "../common/AnimateOnScroll";
 
 const systemProducts = [
@@ -11,6 +11,7 @@ const systemProducts = [
     application: "Corporate",
     desc: "Secure your premises with advanced fingerprint and facial recognition.",
     img: "https://picsum.photos/seed/ac1/500/500",
+    buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
     id: 2,
@@ -19,6 +20,7 @@ const systemProducts = [
     application: "Workforce",
     desc: "Automate employee check-in and manage records with ease.",
     img: "https://picsum.photos/seed/ta1/500/500",
+    buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
     id: 3,
@@ -27,6 +29,7 @@ const systemProducts = [
     application: "Safety",
     desc: "Early detection and automated alerts for maximum protection.",
     img: "https://picsum.photos/seed/fa1/500/500",
+    buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
     id: 4,
@@ -35,6 +38,7 @@ const systemProducts = [
     application: "Residential",
     desc: "Control all your smart security devices from a single, intuitive interface.",
     img: "https://picsum.photos/seed/sh1/500/500",
+    buyNowUrl: "https://kirbgebeya.com/products",
   },
 ];
 
@@ -140,15 +144,28 @@ const SystemsPage = () => {
             <motion.div
               className={styles.modalContent}
               onClick={(e) => e.stopPropagation()}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 50, scale: 0.95 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
             >
-              <h2>{activeProduct.name}</h2>
-              <p>{activeProduct.desc}</p>
-              <a href="#" className={styles.buyNowButton}>
-                Buy Now on Kir Gebeya
-              </a>
+              <img
+                src={activeProduct.img}
+                alt={activeProduct.name}
+                className={styles.modalImage}
+              />
+              <div className={styles.modalText}>
+                <h2>{activeProduct.name}</h2>
+                <p>{activeProduct.desc}</p>
+                <a
+                  href={activeProduct.buyNowUrl}
+                  className={styles.buyNowButton}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Buy Now on Kir Gebeya
+                </a>
+              </div>
               <button
                 className={styles.closeModalButton}
                 onClick={() => setActiveProduct(null)}
@@ -162,5 +179,4 @@ const SystemsPage = () => {
     </div>
   );
 };
-
 export default SystemsPage;

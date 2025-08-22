@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import styles from "./ProductPage.module.css"; // Uses the shared CSS
+import styles from "./ProductPage.module.css";
 import AnimateOnScroll from "../common/AnimateOnScroll";
 
 const recorderProducts = [
@@ -11,6 +11,7 @@ const recorderProducts = [
     channels: 8,
     desc: "High-performance recording with 4K output.",
     img: "https://picsum.photos/seed/nvr1/500/500",
+    buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
     id: 2,
@@ -19,6 +20,7 @@ const recorderProducts = [
     channels: 16,
     desc: "Supports both analog and IP cameras for flexible upgrades.",
     img: "https://picsum.photos/seed/dvr1/500/500",
+    buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
     id: 3,
@@ -27,6 +29,7 @@ const recorderProducts = [
     channels: "N/A",
     desc: "Engineered for 24/7 reliability and data integrity.",
     img: "https://picsum.photos/seed/hdd1/500/500",
+    buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
     id: 4,
@@ -35,14 +38,7 @@ const recorderProducts = [
     channels: 32,
     desc: "Advanced AI features for smart search and analytics.",
     img: "https://picsum.photos/seed/nvr2/500/500",
-  },
-  {
-    id: 5,
-    name: "4-Channel DVR",
-    category: "DVR",
-    channels: 4,
-    desc: "Compact and efficient for small-scale surveillance needs.",
-    img: "https://picsum.photos/seed/dvr2/500/500",
+    buyNowUrl: "https://kirbgebeya.com/products",
   },
 ];
 
@@ -58,7 +54,7 @@ const RecordersPage = () => {
       channelFilter === "All" || product.channels === parseInt(channelFilter);
     return (
       categoryMatch && (product.category !== "Storage" ? channelMatch : true)
-    ); // Ignore channel filter for Storage
+    );
   });
 
   return (
@@ -149,15 +145,28 @@ const RecordersPage = () => {
             <motion.div
               className={styles.modalContent}
               onClick={(e) => e.stopPropagation()}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 50, scale: 0.95 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
             >
-              <h2>{activeProduct.name}</h2>
-              <p>{activeProduct.desc}</p>
-              <a href="#" className={styles.buyNowButton}>
-                Buy Now on Kir Gebeya
-              </a>
+              <img
+                src={activeProduct.img}
+                alt={activeProduct.name}
+                className={styles.modalImage}
+              />
+              <div className={styles.modalText}>
+                <h2>{activeProduct.name}</h2>
+                <p>{activeProduct.desc}</p>
+                <a
+                  href={activeProduct.buyNowUrl}
+                  className={styles.buyNowButton}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Buy Now on Kir Gebeya
+                </a>
+              </div>
               <button
                 className={styles.closeModalButton}
                 onClick={() => setActiveProduct(null)}
@@ -171,5 +180,4 @@ const RecordersPage = () => {
     </div>
   );
 };
-
 export default RecordersPage;

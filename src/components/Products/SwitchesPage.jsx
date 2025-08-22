@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import styles from "./ProductPage.module.css"; // Uses the shared CSS
+import styles from "./ProductPage.module.css";
 import AnimateOnScroll from "../common/AnimateOnScroll";
 
 const switchProducts = [
@@ -11,6 +11,7 @@ const switchProducts = [
     ports: 8,
     desc: "Power up to 8 devices with this compact and efficient PoE switch.",
     img: "https://picsum.photos/seed/sw1/500/500",
+    buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
     id: 2,
@@ -19,6 +20,7 @@ const switchProducts = [
     ports: "N/A",
     desc: "Reliable 4G LTE connectivity for demanding environments.",
     img: "https://picsum.photos/seed/rt1/500/500",
+    buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
     id: 3,
@@ -27,6 +29,7 @@ const switchProducts = [
     ports: "N/A",
     desc: "305-meter box of pure copper CAT6 cable for optimal performance.",
     img: "https://picsum.photos/seed/cb1/500/500",
+    buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
     id: 4,
@@ -35,14 +38,7 @@ const switchProducts = [
     ports: "N/A",
     desc: "Ultra HD monitor for crystal-clear surveillance footage.",
     img: "https://picsum.photos/seed/mon1/500/500",
-  },
-  {
-    id: 5,
-    name: "16-Port Gigabit PoE Switch",
-    category: "PoE Switches",
-    ports: 16,
-    desc: "High-speed data transfer and power for medium-sized networks.",
-    img: "https://picsum.photos/seed/sw2/500/500",
+    buyNowUrl: "https://kirbgebeya.com/products",
   },
 ];
 
@@ -58,7 +54,7 @@ const SwitchesPage = () => {
       portFilter === "All" || product.ports === parseInt(portFilter);
     return (
       categoryMatch && (product.category === "PoE Switches" ? portMatch : true)
-    ); // Only apply port filter to switches
+    );
   });
 
   return (
@@ -149,15 +145,28 @@ const SwitchesPage = () => {
             <motion.div
               className={styles.modalContent}
               onClick={(e) => e.stopPropagation()}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 50, scale: 0.95 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
             >
-              <h2>{activeProduct.name}</h2>
-              <p>{activeProduct.desc}</p>
-              <a href="#" className={styles.buyNowButton}>
-                Buy Now on Kir Gebeya
-              </a>
+              <img
+                src={activeProduct.img}
+                alt={activeProduct.name}
+                className={styles.modalImage}
+              />
+              <div className={styles.modalText}>
+                <h2>{activeProduct.name}</h2>
+                <p>{activeProduct.desc}</p>
+                <a
+                  href={activeProduct.buyNowUrl}
+                  className={styles.buyNowButton}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Buy Now on Kir Gebeya
+                </a>
+              </div>
               <button
                 className={styles.closeModalButton}
                 onClick={() => setActiveProduct(null)}
@@ -171,5 +180,4 @@ const SwitchesPage = () => {
     </div>
   );
 };
-
 export default SwitchesPage;

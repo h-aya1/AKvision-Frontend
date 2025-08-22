@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import styles from "./ProductPage.module.css";
 import AnimateOnScroll from "../common/AnimateOnScroll";
 
-// Sample data with the new `buyNowUrl` property
 const cameraProducts = [
   {
     id: 1,
@@ -12,8 +11,7 @@ const cameraProducts = [
     useCase: "Outdoor",
     desc: "Reliable and cost-effective for traditional CCTV setups.",
     img: "https://picsum.photos/seed/cam1/500/500",
-    buyNowUrl:
-      "https://kirbgebeya.com/product/dahua-hac-hfw1209t-a-led-2mp-full-color-starlight-hdcvi-bullet-camera",
+    buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
     id: 2,
@@ -22,8 +20,7 @@ const cameraProducts = [
     useCase: "Indoor",
     desc: "Superior image clarity and remote access capabilities.",
     img: "https://picsum.photos/seed/cam2/500/500",
-    buyNowUrl:
-      "https://kirbgebeya.com/product/dahua-ipc-hdw2431tn-as-s2-4mp-ir-ip-eyeball-camera",
+    buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
     id: 3,
@@ -32,8 +29,7 @@ const cameraProducts = [
     useCase: "Outdoor",
     desc: "Flexible installation with pan-tilt-zoom functionality.",
     img: "https://picsum.photos/seed/cam3/500/500",
-    buyNowUrl:
-      "https://kirbgebeya.com/product/dahua-sd49225xa-hnr-2mp-25x-starlight-ir-wizsense-network-ptz-camera",
+    buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
     id: 4,
@@ -60,16 +56,6 @@ const cameraProducts = [
     useCase: "Indoor",
     desc: "Ultra HD resolution with powerful zoom and smart tracking.",
     img: "https://picsum.photos/seed/cam6/500/500",
-    buyNowUrl:
-      "https://kirbgebeya.com/product/dahua-sd49225xa-hnr-2mp-25x-starlight-ir-wizsense-network-ptz-camera",
-  },
-  {
-    id: 7,
-    name: "Indoor IP Cube Camera",
-    category: "IP Cameras",
-    useCase: "Indoor",
-    desc: "Compact and discreet for residential and small business monitoring.",
-    img: "https://picsum.photos/seed/cam7/500/500",
     buyNowUrl: "https://kirbgebeya.com/products",
   },
 ];
@@ -89,7 +75,6 @@ const CamerasPage = () => {
 
   return (
     <div className={styles.productPage}>
-      {/* ... Hero, Intro, and Filter sections remain the same ... */}
       <section
         className={styles.heroSection}
         style={{
@@ -168,8 +153,6 @@ const CamerasPage = () => {
           ))}
         </div>
       </div>
-
-      {/* Quick View Modal with the CORRECTED button */}
       <AnimatePresence>
         {activeProduct && (
           <motion.div
@@ -182,9 +165,10 @@ const CamerasPage = () => {
             <motion.div
               className={styles.modalContent}
               onClick={(e) => e.stopPropagation()}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 50, scale: 0.95 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
             >
               <img
                 src={activeProduct.img}
@@ -216,5 +200,4 @@ const CamerasPage = () => {
     </div>
   );
 };
-
 export default CamerasPage;

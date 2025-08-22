@@ -120,13 +120,13 @@ export const mainNavigation = [
         ],
       },
       // This second column is an example of how you can add more to the mega menu later
-      {
-        title: "Featured",
-        links: [
-          { label: "New Arrivals", path: "/products/new" },
-          { label: "Promotions", path: "/products/promotions" },
-        ],
-      },
+      // {
+      //   title: "Featured",
+      //   links: [
+      //     { label: "New Arrivals", path: "/products/new" },
+      //     { label: "Promotions", path: "/products/promotions" },
+      //   ],
+      // },
     ],
   },
   {
