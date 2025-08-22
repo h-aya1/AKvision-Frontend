@@ -3,7 +3,6 @@
   height: 89px;
   border-bottom: 1px solid #e0e0e0;
 }
-
 .container {
   height: 100%;
   display: flex;
@@ -11,45 +10,48 @@
   align-items: center;
   gap: 70px;
 }
-
 .logo {
   display: flex;
   align-items: center;
   text-decoration: none;
 }
-
 .logoText {
   font-size: 28px;
   font-weight: 500;
   color: #ae3f3d;
   letter-spacing: -2px;
 }
-
 .logoImg {
   height: 70px;
 }
-
 .navLinks {
   display: flex;
   gap: 50px;
 }
-
 .navItem {
   position: relative;
 }
 
-.navLinks a {
+/* Base styles for both Links and Labels */
+.navLinks a,
+.navLabel {
   font-size: 18px;
   font-weight: 500;
   color: #0f0f0f;
-  text-decoration: none; /* Changed from dashed */
+  text-decoration: none;
   position: relative;
   padding: 30px 0;
-  transition: color 0.3s ease; /* Added transition for color change */
+  transition: color 0.3s ease;
 }
 
-/* --- Underline Effect --- */
-.navLinks a::after {
+/* This is the new style for non-clickable labels */
+.navLabel {
+  cursor: default;
+}
+
+/* Underline Effect */
+.navLinks a::after,
+.navItem:hover > .navLabel::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -58,20 +60,20 @@
   height: 3px;
   background-color: #e62129;
   transform: scaleX(0);
-  transform-origin: center; /* Ensures the line grows from the center */
-  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother easing */
+  transform-origin: center;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-
 .navLinks a:hover::after,
-.navItem:hover > a::after {
+.navItem:hover > a::after,
+.navItem:hover > .navLabel::after {
   transform: scaleX(1);
 }
-
-.navItem:hover > a {
+.navItem:hover > a,
+.navItem:hover > .navLabel {
   color: #e62129;
 }
 
-/* --- Mega Menu --- */
+/* Mega Menu */
 .mega {
   position: absolute;
   left: 50%;
@@ -85,25 +87,20 @@
   padding: 30px;
   opacity: 0;
   pointer-events: none;
-  /* Updated Transform and Transition for smoothness */
-  transform: translateX(-50%) translateY(20px); /* Start slightly lower */
+  transform: translateX(-50%) translateY(20px);
   transition: opacity 300ms ease, transform 300ms ease;
   z-index: 100;
 }
-
-/* --- Mega Menu Hover State --- */
 .navItem:hover .mega {
   opacity: 1;
-  transform: translateX(-50%) translateY(0); /* Move to final position */
+  transform: translateX(-50%) translateY(0);
   pointer-events: auto;
 }
-
 .megaGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 30px;
 }
-
 .megaColTitle {
   margin: 0 0 15px;
   font-size: 16px;
@@ -112,28 +109,24 @@
   padding-bottom: 8px;
   border-bottom: 1px solid #e0e0e0;
 }
-
-/* Smoother appearance for links within the mega menu */
 .megaColLinks {
   display: flex;
   flex-direction: column;
 }
-
 .megaLink {
   display: block;
   color: #666666;
   text-decoration: none;
   padding: 8px 0;
   font-size: 14px;
-  transition: color 0.2s ease, padding-left 0.3s ease; /* Added padding transition */
+  transition: color 0.2s ease, padding-left 0.3s ease;
 }
-
 .megaLink:hover {
   color: #e62129;
-  padding-left: 5px; /* Adds a subtle indent on hover */
+  padding-left: 5px;
 }
 
-/* --- Search Box --- */
+/* Search Box */
 .searchBox {
   display: flex;
   align-items: center;
@@ -144,18 +137,15 @@
   width: 160px;
   transition: width 0.3s ease;
 }
-
 .searchBox:hover,
 .searchBox:focus-within {
   width: 240px;
 }
-
 .searchIcon {
   width: 18px;
   height: 18px;
   color: #555;
 }
-
 .searchInput {
   border: none;
   outline: none;
@@ -165,7 +155,6 @@
   width: 100%;
   background-color: transparent;
 }
-
 .searchInput::placeholder {
   color: #999;
 }
