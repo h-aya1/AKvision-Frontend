@@ -1,18 +1,18 @@
-/* General Page Styles */
+/* General Page Styles
 .servicesPage {
   background-color: #f9fafb;
   color: #1f2937;
-}
+} */
 
-.sectionTitle {
-  font-size: 2.25rem; /* 36px */
+/* .sectionTitle {
+  font-size: 2.25rem; /* 36px *
   font-weight: 700;
   text-align: center;
-  margin-bottom: 3rem; /* 48px */
-}
+  margin-bottom: 3rem; /* 48px *
+} */
 
 /* Page Header */
-.pageHeader {
+/* .pageHeader {
   background-color: #ffffff;
   padding: 4rem 1rem;
   border-bottom: 1px solid #e5e7eb;
@@ -21,8 +21,8 @@
 .headerContent {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
+  justify-content: space-between; */
+/* max-width: 1200px;
   margin: 0 auto;
   gap: 2rem;
 }
@@ -30,20 +30,20 @@
 .headerText {
   flex: 1;
   text-align: left;
-}
+} */
 
-.headerImageContainer {
-  flex: 1;
-}
+/* .headerImageContainer {
+  flex: 1; */
+/* } */
 
-.headerImage {
+/* .headerImage {
   width: 100%;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+} */
 
-.pageTitle {
-  font-size: 3rem; /* 48px */
+/* .pageTitle {
+  font-size: 3rem; 
   font-weight: 800;
   margin-bottom: 1rem;
   color: #1f2937;
@@ -51,14 +51,14 @@
 }
 
 .pageSubtitle {
-  font-size: 1.25rem; /* 20px */
+  font-size: 1.25rem;
   color: #4b5563;
   max-width: 600px;
   margin: 0;
   text-align: left;
-}
+} */
+/* 
 
-/* Products Section */
 .productsSection {
   padding: 4rem 1rem;
 }
@@ -68,10 +68,10 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   max-width: 1200px;
-  margin: 0 auto;
-}
+  margin: 0 auto; */
+/* } */
 
-.productCard {
+/* .productCard {
   position: relative;
   overflow: hidden;
   border-radius: 8px;
@@ -82,16 +82,16 @@
 .productCard:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-}
+} */
 
-.productImage {
+/* .productImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
-}
+} */
 
-.productCard:hover .productImage {
+/* .productCard:hover .productImage {
   transform: scale(1.05);
 }
 
@@ -102,64 +102,64 @@
   right: 0;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
   padding: 1.5rem;
-}
+} */
 
-.productName {
+/* .productName {
   color: white;
-  font-size: 1.5rem; /* 24px */
+  font-size: 1.5rem;
   font-weight: 600;
-}
+} */
 
 /* CTA Button */
-.ctaContainer {
+/* .ctaContainer {
   text-align: center;
-  margin-top: 3rem; /* 48px */
-}
-
+  margin-top: 3rem; 
+} */
+/* 
 .ctaButton {
   display: inline-block;
-  background-color: #ae3f3d; /* Fallback for --color-primary */
+  background-color: #ae3f3d;
   color: white;
   padding: 1rem 2rem;
   border-radius: 8px;
-  font-size: 1.125rem; /* 18px */
+  font-size: 1.125rem; 
   font-weight: 600;
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
+} */
+/* 
 .ctaButton:hover {
-  background-color: #353535; /* A darker shade */
+  background-color: #353535; 
   transform: translateY(-2px);
-}
+} */
 
 /* Installation Section */
-.installationSection {
+/* .installationSection {
   background-color: #ffffff;
   padding: 4rem 1rem;
   text-align: center;
-}
+} */
 
-.installationContent {
+/* .installationContent {
   max-width: 800px;
   margin: 0 auto;
 }
 
 .installationIcon {
-  width: 4rem; /* 64px */
-  height: 4rem; /* 64px */
+  width: 4rem; 
+  height: 4rem; 
   margin: 0 auto 1.5rem;
-  color: #ae3f3d; /* Fallback for --color-primary */
-}
+  color: #ae3f3d; 
+} */
 
-.installationDescription {
-  font-size: 1.125rem; /* 18px */
+/* .installationDescription {
+  font-size: 1.125rem; 
   line-height: 1.75;
   color: #4b5563;
-}
+} */
 
 /* Service Process Section */
-.processSection {
+/* .processSection {
   padding: 4rem 1rem;
 }
 
@@ -175,33 +175,289 @@
   text-align: center;
   position: relative;
   flex: 1;
-}
+} */
 
-.stepNumber {
+/* .stepNumber {
   width: 3rem; /* 48px */
-  height: 3rem; /* 48px */
-  border-radius: 50%;
+/* height: 3rem; /* 48px */
+/* border-radius: 50%;
   background-color: #ae3f3d; /* Fallback for --color-primary */
-  color: white;
+/* color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem; /* 24px */
+  font-size: 1.5rem; 24px
   font-weight: 700;
   margin: 0 auto 1rem;
-  border: 4px solid #f9fafb;
-}
+  border: 4px solid #f9fafb; */
+/* } */
 
-.stepTitle {
+/* .stepTitle {
   font-size: 1.125rem; /* 18px */
-  font-weight: 600;
-}
+/* font-weight: 600; */
+/* } */
 
-.stepConnector {
+/* .stepConnector {
   flex: 1;
   height: 4px;
   background-color: #d1d5db;
   margin: 0 -1px;
   transform: translateY(-2.5rem);
+} */
+
+/* ? */
+/* --- General Page Styles --- */
+.servicesPage {
+  background-color: #f9fafb;
+  color: #1f2937;
+  overflow-x: hidden;
 }
 
+.sectionTitle {
+  font-size: 2.5rem; /* 40px */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 4rem; /* 64px */
+}
+
+/* --- Page Header --- */
+.pageHeader {
+  background-color: #ffffff;
+  padding: 5rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.headerText {
+  flex: 1;
+}
+.headerImageContainer {
+  flex: 1;
+}
+
+.headerImage {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.pageTitle {
+  font-size: 3rem; /* 48px */
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.pageSubtitle {
+  font-size: 1.25rem; /* 20px */
+  color: #4b5563;
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+/* --- Products Section --- */
+.productsSection {
+  padding: 5rem 0;
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.productCard {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  aspect-ratio: 4 / 3;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.productCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.productCard:hover .productImage {
+  transform: scale(1.05);
+}
+
+.productOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  padding: 1.5rem;
+}
+
+.productName {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* --- THE ELEGANT TESTIMONIALS SECTION --- */
+.testimonialsSection {
+  padding: 6rem 0;
+  background-color: #322d2dff; /* Your brand red */
+  color: white;
+}
+.lightText {
+  color: white;
+}
+.testimonialSlider {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.testimonialSlide {
+  padding: 1rem;
+  cursor: grab;
+}
+.quote {
+  font-size: 1.75rem;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-left: 50px;
+  text-align: left;
+}
+.quote::before {
+  content: "“";
+  position: absolute;
+  left: 0;
+  top: -10px;
+  font-size: 4rem;
+  font-family: serif;
+  color: rgba(255, 255, 255, 0.2);
+}
+.author {
+  text-align: left;
+  padding-left: 50px;
+}
+.authorName {
+  font-weight: 700;
+  display: inline;
+}
+.authorCompany {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  display: inline;
+}
+.testimonialSlider :global(.swiper-pagination-bullet) {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.testimonialSlider :global(.swiper-pagination-bullet-active) {
+  background-color: white;
+}
+
+/* --- Installation Section --- */
+.installationSection {
+  background-color: #ffffff;
+  padding: 5rem 0;
+  text-align: center;
+}
+.installationContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.installationIcon {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto 1.5rem;
+  color: #ae3f3d;
+}
+.installationDescription {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: #4b5563;
+}
+
+/* --- Service Process Section --- */
+.processSection {
+  padding: 5rem 0;
+}
+.processSteps {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+.processStepWrapper {
+  flex: 1;
+} /* Added wrapper for animation */
+.processStep {
+  text-align: center;
+  position: relative;
+  padding: 0 1rem;
+}
+.stepNumber {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: white;
+  color: #ae3f3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto 1rem;
+  border: 2px solid #e5e7eb;
+  box-shadow: 0 0 0 4px white; /* Knockout effect */
+  position: relative;
+  z-index: 2;
+}
+.stepTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.stepConnector {
+  position: absolute;
+  top: 1.5rem; /* Aligns with center of number circle */
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: #e5e7eb;
+  z-index: 1;
+}
+
+/* --- CTA Button --- */
+.ctaContainer {
+  text-align: center;
+  margin-top: 4rem;
+}
+.ctaButton {
+  display: inline-block;
+  background-color: #ae3f3d;
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 6px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.ctaButton:hover {
+  background-color: #923432; /* Darker red */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(174, 63, 61, 0.2);
+}
