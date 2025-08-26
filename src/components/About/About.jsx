@@ -1,182 +1,235 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+
 import styles from "./About.module.css";
-import {
-  EyeIcon,
-  LightBulbIcon,
-  ShieldCheckIcon,
-  UserGroupIcon,
-  GlobeAltIcon,
-  BeakerIcon,
-  ClockIcon,
-  RocketLaunchIcon,
-} from "@heroicons/react/24/outline";
+import AnimateOnScroll from "../common/AnimateOnScroll";
+import Counter from "../common/Counter"; // <-- IMPORT THE NEW COUNTER
+
+import "swiper/css";
+import "swiper/css/navigation";
+
+// Data with the '+' removed from the value
+const stats = [
+  { value: 15, label: "Years Of Experience" },
+  { value: 600, label: "Success Projects" },
+  { value: 40, label: "Team Members" },
+  { value: 500, label: "Clients Satisfactions" },
+];
+const team = [
+  {
+    name: "William Lucas",
+    title: "Co Founder",
+    img: "https://picsum.photos/seed/ceo/400/500",
+  },
+  {
+    name: "Daniel Smith",
+    title: "Senior Architect",
+    img: "https://picsum.photos/seed/cto/400/500",
+  },
+  {
+    name: "Dymond Nisha",
+    title: "Chief Executive",
+    img: "https://picsum.photos/seed/coo/400/500",
+  },
+  {
+    name: "Isabella Rossi",
+    title: "Lead R&D Engineer",
+    img: "https://picsum.photos/seed/eng/400/500",
+  },
+];
+const partners = [
+  { name: "Intaz", src: "/path/to/intaz.svg" },
+  { name: "Qanf", src: "/path/to/qanf.svg" },
+  { name: "Mano", src: "/path/to/mano.svg" },
+  { name: "Inova", src: "/path/to/inova.svg" },
+  { name: "Art & Design", src: "/path/to/artdesign.svg" },
+  { name: "Studio Pro", src: "/path/to/studiopro.svg" },
+];
 
 const About = () => {
   return (
     <div className={styles.aboutPage}>
-      {/* Intro Section */}
-      <section className={`${styles.section} ${styles.introSection}`}>
-        <div className={styles.introContent}>
-          <h1 className={styles.mainTitle}>About AKvision</h1>
-          <p className={styles.subtitle}>
-            Pioneering the future of security with innovative technology and
-            unwavering commitment. We are dedicated to providing solutions that
-            protect and empower our clients.
-          </p>
+      {/* 1. ELEGANT HERO SECTION */}
+      <section className={styles.heroSection}>
+        <div className={styles.heroImage}></div>
+        <div className="container">
+          <motion.h1
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            About Us
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+          >
+            Home / About Us
+          </motion.p>
         </div>
       </section>
 
-      {/* Vision Section */}
-      <section className={`${styles.section} ${styles.visionSection}`}>
-        <div className={styles.visionMissionContainer}>
-          <div className={styles.missionVisionIcon}>
-            <EyeIcon />
-          </div>
-          <h2 className={styles.sectionTitle}>Our Vision</h2>
-          <p className={styles.sectionText}>
-            To be the global leader in security solutions, creating a safer
-            world through continuous innovation and unwavering commitment to our
-            clients.
-          </p>
-        </div>
-      </section>
-
-      {/* Mission Section */}
-      <section className={`${styles.section} ${styles.missionSection}`}>
-        <div className={styles.visionMissionContainer}>
-          <div className={styles.missionVisionIcon}>
-            <RocketLaunchIcon />
-          </div>
-          <h2 className={styles.sectionTitle}>Our Mission</h2>
-          <p className={styles.sectionText}>
-            To provide state-of-the-art, reliable, and user-friendly security
-            systems that protect what matters most to our customers, backed by
-            exceptional service and support.
-          </p>
-        </div>
-      </section>
-
-      {/* Company History Section */}
-      <section className={`${styles.section} ${styles.historySection}`}>
-        <h2 className={styles.sectionTitle}>Our Journey</h2>
-        <div className={styles.timeline}>
-          <div className={styles.timelineItem}>
-            <div className={styles.timelineIcon}>
-              <ClockIcon />
-            </div>
-            <div className={styles.timelineContent}>
-              <h3>2010 - The Beginning</h3>
-              <p>
-                AKvision was founded with the goal of revolutionizing the
-                security industry.
-              </p>
-            </div>
-          </div>
-          <div className={styles.timelineItem}>
-            <div className={styles.timelineIcon}>
-              <BeakerIcon />
-            </div>
-            <div className={styles.timelineContent}>
-              <h3>2015 - First Breakthrough</h3>
-              <p>
-                Launched our first AI-powered surveillance system, setting new
-                industry standards.
-              </p>
-            </div>
-          </div>
-          <div className={styles.timelineItem}>
-            <div className={styles.timelineIcon}>
-              <GlobeAltIcon />
-            </div>
-            <div className={styles.timelineContent}>
-              <h3>2020 - Global Expansion</h3>
-              <p>
-                Expanded operations to over 50 countries, serving clients
-                worldwide.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Core Values Section */}
-      <section className={`${styles.section} ${styles.valuesSection}`}>
-        <h2 className={styles.sectionTitle}>Our Core Values</h2>
-        <div className={styles.valuesGrid}>
-          <div className={styles.valueCard}>
-            <h4>Integrity</h4>
-          </div>
-          <div className={styles.valueCard}>
-            <h4>Innovation</h4>
-          </div>
-          <div className={styles.valueCard}>
-            <h4>Customer-Centricity</h4>
-          </div>
-          <div className={styles.valueCard}>
-            <h4>Excellence</h4>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className={`${styles.section} ${styles.whyChooseUsSection}`}>
-        <h2 className={styles.sectionTitle}>Why Choose Us?</h2>
-        <div className={styles.whyChooseUsGrid}>
-          <div className={styles.whyChooseUsCard}>
-            <div className={styles.whyChooseUsIcon}>
-              <ShieldCheckIcon />
-            </div>
-            <h3 className={styles.whyChooseUsTitle}>Reliability</h3>
-            <p>Dependable solutions that you can trust, 24/7.</p>
-          </div>
-          <div className={styles.whyChooseUsCard}>
-            <div className={styles.whyChooseUsIcon}>
-              <LightBulbIcon />
-            </div>
-            <h3 className={styles.whyChooseUsTitle}>Innovation</h3>
-            <p>Cutting-edge technology to stay ahead of threats.</p>
-          </div>
-          <div className={styles.whyChooseUsCard}>
-            <div className={styles.whyChooseUsIcon}>
-              <UserGroupIcon />
-            </div>
-            <h3 className={styles.whyChooseUsTitle}>Expert Team</h3>
-            <p>A dedicated team of professionals with years of experience.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Innovation & Technology Section */}
-      <section className={`${styles.section} ${styles.innovationSection}`}>
-        <div className={styles.innovationContent}>
-          <div className={styles.innovationText}>
-            <h2 className={styles.sectionTitle}>Innovation & Technology</h2>
-            <p>
-              We are committed to pushing the boundaries of what's possible. Our
-              dedicated R&D team works tirelessly to develop next-generation
-              security solutions, from advanced AI analytics to robust hardware,
-              ensuring we always stay one step ahead.
-            </p>
-          </div>
-          <div className={styles.innovationImageContainer}>
+      {/* 2. INSPIRING SPACES SECTION */}
+      <section className={styles.inspiringSection}>
+        <div className={`container ${styles.inspiringGrid}`}>
+          <AnimateOnScroll className={styles.inspiringImages}>
             <img
-              src="https://picsum.photos/seed/innovation/600/400"
-              alt="Innovation"
-              className={styles.innovationImage}
+              src="https://picsum.photos/seed/about-main/400/600"
+              alt="Modern Building"
+              className={styles.img1}
             />
+            {/* <img
+              src="https://picsum.photos/seed/about-sub/400/300"
+              alt="Security Blueprint"
+              className={styles.img2}
+            /> */}
+          </AnimateOnScroll>
+          <AnimateOnScroll className={styles.inspiringText} delay={0.2}>
+            <p className={styles.preTitle}>About Company</p>
+            <h2>Creating Inspiring Security Solutions</h2>
+            <p className={styles.description}>
+              AK VISTION is a term used to refer to an organized collection of
+              technology, systems, and processes engineered to provide
+              unparalleled security and peace of mind.
+            </p>
+            <ul className={styles.checklist}>
+              <li>✓ Advanced AI Analytics</li>
+              <li>✓ Robust & Reliable Hardware</li>
+              <li>✓ Comprehensive System Integration</li>
+            </ul>
+            <a href="/contact" className={styles.readMoreButton}>
+              Read More →
+            </a>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
+      {/* 3. WORKING PROCESS SECTION */}
+      <section className={styles.processSection}>
+        <div className="container">
+          <AnimateOnScroll>
+            <p className={styles.preTitle}>Working Process</p>
+            <h2>Our Working Process</h2>
+          </AnimateOnScroll>
+          <div className={styles.processGrid}>
+            <AnimateOnScroll className={styles.processItem} delay={0.1}>
+              <div className={styles.processNumber}>01</div>
+              <h3>Our Vision</h3>
+              <p>
+                To be the global leader in security, creating a safer world
+                through continuous innovation.
+              </p>
+            </AnimateOnScroll>
+            <AnimateOnScroll className={styles.processItem} delay={0.2}>
+              <div className={styles.processNumber}>02</div>
+              <h3>Our Mission</h3>
+              <p>
+                To provide state-of-the-art, reliable, and user-friendly systems
+                that protect what matters most.
+              </p>
+            </AnimateOnScroll>
+            <AnimateOnScroll className={styles.processItem} delay={0.3}>
+              <div className={styles.processNumber}>03</div>
+              <h3>Our Goal</h3>
+              <p>
+                To deliver exceptional service and support, ensuring total
+                client satisfaction and peace of mind.
+              </p>
+            </AnimateOnScroll>
           </div>
         </div>
       </section>
 
-      {/* Global Presence Section
-      <section className={`${styles.section} ${styles.globalSection}`}>
-        <h2 className={styles.sectionTitle}>Our Global Presence</h2>
-        <p className={styles.globalSubtitle}>Operating in over 50 countries, we provide localized support on a global scale.</p>
-        <div className={styles.visionMissionContainer}>
-          <GlobeAltIcon className={styles.mapIcon} />
+      {/* 4. PROMO VIDEO SECTION */}
+      <section className={styles.videoSection}>
+        <div className="container">
+          <AnimateOnScroll>
+            <div className={styles.videoPlayer}>
+              <video
+                src="https://www.w3schools.com/html/mov_bbb.mp4"
+                poster="https://picsum.photos/seed/video-poster/1200/675"
+                controls
+              />
+            </div>
+          </AnimateOnScroll>
         </div>
       </section>
-      */}
+
+      {/* 5. STATS COUNTER SECTION (Now with animated numbers) */}
+      <section className={styles.statsSection}>
+        <div className={`container ${styles.statsGrid}`}>
+          {stats.map((stat, index) => (
+            <AnimateOnScroll
+              key={stat.label}
+              className={styles.statItem}
+              delay={index * 0.1}
+            >
+              <Counter value={stat.value}>+</Counter>
+              <p>{stat.label}</p>
+            </AnimateOnScroll>
+          ))}
+        </div>
+      </section>
+
+      {/* 6. MEET THE TEAM SLIDER (With bug fix) */}
+      <section className={styles.teamSection}>
+        <div className="container">
+          <AnimateOnScroll>
+            <p className={styles.preTitle}>Our Team</p>
+            <h2>Meet Our Highly Professional Team</h2>
+          </AnimateOnScroll>
+          <div className={styles.teamSliderContainer}>
+            <Swiper
+              modules={[Navigation]}
+              spaceBetween={30}
+              slidesPerView={3}
+              navigation={{
+                nextEl: `.${styles.swiperButtonNext}`,
+                prevEl: `.${styles.swiperButtonPrev}`,
+              }}
+              className={styles.teamSwiper} // <-- THE BUG FIX
+              breakpoints={{
+                // Responsive breakpoints for the slider
+                320: { slidesPerView: 1, spaceBetween: 20 },
+                768: { slidesPerView: 2, spaceBetween: 30 },
+                1024: { slidesPerView: 3, spaceBetween: 30 },
+              }}
+            >
+              {team.map((member) => (
+                <SwiperSlide key={member.name}>
+                  <div className={styles.teamMember}>
+                    <div className={styles.memberImage}>
+                      <img src={member.img} alt={member.name} />
+                      <div className={styles.memberOverlay}>
+                        <h3>{member.name}</h3>
+                        <p>{member.title}</p>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            <div className={styles.swiperButtonPrev}>←</div>
+            <div className={styles.swiperButtonNext}>→</div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. PARTNER LOGO MARQUEE */}
+      <section className={styles.partnerSection}>
+        <div className={styles.marquee}>
+          <div className={styles.marqueeTrack}>
+            {[...partners, ...partners].map((p, i) => (
+              <div key={i} className={styles.partnerLogo}>
+                {p.name}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

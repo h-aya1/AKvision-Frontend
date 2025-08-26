@@ -1,249 +1,366 @@
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .aboutPage {
-  color: #333;
+  background-color: #fdfdfd;
 }
-
-.section {
-  padding: 5rem 1rem;
-}
-
-/* Intro Section */
-.introSection {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/seed/business/1920/1080');
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  color: white;
-}
-
-.introContent {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.mainTitle {
-  font-size: 3.5rem; /* 56px */
-  font-weight: 800;
-  margin-bottom: 1rem;
-}
-
-.subtitle {
-  font-size: 1.25rem; /* 20px */
-  opacity: 0.9;
-}
-
-/* Vision Section */
-.visionSection {
-  background-color: #f9fafb;
-  text-align: center;
-}
-
-/* Mission Section */
-.visionMissionContainer {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.missionSection {
-  background-color: #ffffff;
-  text-align: center;
-}
-
-.missionVisionIcon {
-  width: 4rem;
-  height: 4rem;
-  margin: 0 auto 1.5rem;
-  color: #ae3f3d;
-}
-
-.sectionText {
-  max-width: 800px;
-  margin: 1rem auto 0;
-  font-size: 1.125rem;
-  line-height: 1.75;
-  color: #4b5563;
-}
-
-/* Why Choose Us Section */
-.whyChooseUsSection {
-  background-color: #ffffff;
-  text-align: center;
-}
-
-.sectionTitle {
-  font-size: 2.5rem; /* 40px */
-  font-weight: 700;
-  margin-bottom: 3rem;
-  text-align: center;
-}
-
-.whyChooseUsGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.whyChooseUsCard {
-  padding: 2rem;
-}
-
-.whyChooseUsIcon {
-  width: 4rem; /* 64px */
-  height: 4rem; /* 64px */
-  margin: 0 auto 1.5rem;
-  color: #ae3f3d;
-}
-
-.whyChooseUsTitle {
-  font-size: 1.5rem; /* 24px */
-  font-weight: 600;
+.preTitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #888;
   margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+.aboutPage h2 {
+  font-family: "Georgia", serif;
+  font-size: 2.75rem;
+  font-weight: 500;
+  color: #2c2c2c;
+  margin: 0 0 1.5rem;
+  line-height: 1.3;
 }
 
-/* History Section */
-.historySection {
-  background-color: #ffffff;
-}
-
-.timeline {
+/* Hero */
+.heroSection {
+  padding: 6rem 1rem;
   position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem 0;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 100%;
-  background-color: #e5e7eb;
-}
-
-.timelineItem {
-  position: relative;
-  margin-bottom: 2rem;
-  width: 50%;
-  padding: 0 2rem;
-}
-
-.timelineItem:nth-child(odd) {
-  left: 0;
-}
-
-.timelineItem:nth-child(even) {
-  left: 50%;
-  flex-direction: row-reverse;
-}
-
-.timelineContent {
-  width: 45%;
-}
-
-.timelineIcon {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  background-color: #ae3f3d;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  color: white;
+}
+.heroImage {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  inset: 0;
+  background-image: url("https://picsum.photos/seed/about-dark-hero/1920/1080");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.6);
+  z-index: 1;
+}
+.heroSection h1,
+.heroSection p {
+  position: relative;
+  z-index: 2;
+}
+.heroSection h1 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.heroSection p {
+  color: #e0e0e0;
 }
 
-/* Values Section */
-.valuesSection {
+/* Inspiring Spaces */
+.inspiringSection {
+  padding: 6rem 1rem;
+}
+.inspiringGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.inspiringImages {
+  position: relative;
+  height: 500px;
+}
+.inspiringImages img {
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  object-fit: cover;
+}
+.img1 {
+  width: 70%;
+  height: 80%;
+  top: 0;
+  right: 0;
+}
+.img2 {
+  width: 50%;
+  height: 60%;
+  bottom: 0;
+  left: 0;
+  border: 10px solid white;
+}
+.description {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+}
+.checklist li {
+  margin-bottom: 0.75rem;
+  color: #333;
+  font-weight: 500;
+}
+.readMoreButton {
+  background-color: #333;
+  color: white;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+.readMoreButton:hover {
+  background-color: #000;
+}
+
+/* Working Process */
+.processSection {
+  padding: 6rem 1rem;
   background-color: #f9fafb;
 }
-
-.valuesGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.valueCard {
-  background-color: white;
-  padding: 2rem;
+.processSection .preTitle,
+.processSection h2 {
   text-align: center;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+.processGrid::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 16.66%;
+  right: 16.66%;
+  height: 2px;
+  background-image: linear-gradient(
+    to right,
+    #ccc 33%,
+    rgba(255, 255, 255, 0) 0%
+  );
+  background-position: bottom;
+  background-size: 15px 2px;
+  background-repeat: repeat-x;
+}
+.processItem {
+  text-align: center;
+  position: relative;
+}
+.processNumber {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px dashed #ccc;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 1.5rem;
   font-size: 1.25rem;
   font-weight: 600;
+  background-color: #f9fafb;
+}
+.processItem h3 {
+  font-size: 1.5rem;
+  font-family: "Georgia", serif;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.processItem p {
+  color: #555;
+  line-height: 1.6;
 }
 
-/* Innovation Section */
-.innovationSection {
-  background-color: #ffffff;
+/* Video */
+.videoSection {
+  padding: 6rem 1rem;
+}
+.videoPlayer {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+.videoPlayer video {
+  width: 100%;
+  display: block;
 }
 
-.innovationContent {
-  display: flex;
-  align-items: center;
-  gap: 3rem;
+/* Stats */
+.statsSection {
+  padding: 5rem 1rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("https://picsum.photos/seed/stats-bg/1920/1080");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+}
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  text-align: center;
+}
+.statItem h3 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+}
+.statItem p {
+  color: #e0e0e0;
+  margin: 0.5rem 0 0;
 }
 
-.innovationText {
-  flex: 1;
+/* Team Slider */
+.teamSection {
+  padding: 6rem 1rem;
 }
-
-.innovationImageContainer {
-  flex: 1;
+.teamSection h2,
+.teamSection .preTitle {
+  text-align: center;
 }
-
-.innovationImage {
+.teamSliderContainer {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.teamMember {
+  position: relative;
+  overflow: hidden;
+}
+.memberImage {
+  aspect-ratio: 3 / 4;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.memberImage img {
   width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: transform 0.4s ease;
+}
+.teamMember:hover .memberImage img {
+  transform: scale(1.05);
+}
+.memberOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 1.5rem 1.5rem;
+  color: white;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  text-align: center;
+}
+.memberOverlay h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+}
+.memberOverlay p {
+  margin: 0;
+  color: #e0e0e0;
+}
+.swiperButtonPrev,
+.swiperButtonNext {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  color: #333;
+}
+.swiperButtonPrev {
+  left: -22px;
+}
+.swiperButtonNext {
+  right: -22px;
 }
 
-/* Global Presence Section - Styles removed */
+/* Partner Marquee */
+.partnerSection {
+  padding: 4rem 0;
+  border-top: 1px solid #e5e7eb;
+}
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.marquee::before,
+.marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+}
+.marquee::before {
+  left: 0;
+  background: linear-gradient(to right, #fdfdfd, transparent);
+}
+.marquee::after {
+  right: 0;
+  background: linear-gradient(to left, #fdfdfd, transparent);
+}
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+.partnerLogo {
+  height: 40px;
+  margin: 0 40px;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  font-size: 24px;
+  display: grid;
+  place-items: center;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+.marqueeTrack:hover .partnerLogo {
+  filter: grayscale(0%);
+  opacity: 1;
+}
 
 /* Responsive */
-@media (max-width: 768px) {
-  .innovationContent {
-    flex-direction: column;
-  }
-
-    .whyChooseUsGrid, .valuesGrid {
+@media (max-width: 992px) {
+  .inspiringGrid,
+  .processGrid {
     grid-template-columns: 1fr;
   }
-
-  .timeline::before {
-    left: 1.5rem;
+  .inspiringImages {
+    height: 400px;
+    margin-bottom: 2rem;
   }
-
-  .timelineItem, .timelineItem:nth-child(odd) {
-    flex-direction: column;
-    align-items: flex-start;
+  .statsGrid {
+    grid-template-columns: 1fr 1fr;
   }
-
-  .timelineContent {
-    width: 100%;
-    padding-left: 3rem;
-  }
-
-  .timelineIcon {
-    left: 0;
-  }
-
-  .mainTitle {
-    font-size: 2.5rem;
-  }
-
-  .sectionTitle {
-    font-size: 2rem;
+  .teamSwiper {
+    padding: 0 30px !important;
   }
 }
