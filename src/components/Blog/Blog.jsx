@@ -111,7 +111,7 @@ const Blog = () => {
         <div className={styles.pageHeader}>
           <h1 className={styles.pageTitle}>Blog & Resources</h1>
           <p className={styles.pageDescription}>
-            Stay updated with the latest security industry news, tips, and expert insights.
+            Stay updated with the latest security industry new, tips, and expert insights.
           </p>
         </div>
 
