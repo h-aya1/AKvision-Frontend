@@ -1,0 +1,63 @@
+# This is the name of your GitHub Action workflow.
+name: Deploy Frontend to cPanel
+
+# This section defines WHEN the action should run.
+on:
+  # Run this workflow automatically every time you push code to the 'main' branch.
+  push:
+    branches:
+      - main
+
+# This section defines WHAT the action will do.
+jobs:
+  # We define a single job called 'build-and-deploy'.
+  build-and-deploy:
+    # Use the latest version of Ubuntu as the operating system for our virtual machine.
+    runs-on: ubuntu-latest
+
+    # These are the individual steps the job will perform.
+    steps:
+      # Step 1: Check out your repository code.
+      # This downloads your latest code from the 'main' branch onto the virtual machine.
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js.
+      # Our React project needs Node.js to be built. This step installs it.
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Use a recent, stable version of Node.js
+
+      # Step 3: Install project dependencies.
+      # This runs 'npm install' to download all the packages like React, Axios, etc.
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Build the React application.
+      # This is the most important step. It runs 'npm run build' which turns your
+      # React code into a 'dist' folder of static HTML, CSS, and JS files.
+      - name: Build project
+        run: npm run build
+
+      # Step 5: Deploy the built files to your cPanel via FTP.
+      # This uses a popular, pre-made action for FTP deployment.
+      - name: Deploy to FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          # The FTP server address (e.g., ftp.yourdomain.com)
+          # We are securely pulling this from the GitHub Secret we created.
+          server: ${{ secrets.FTP_SERVER }}
+
+          # The FTP username
+          username: ${{ secrets.FTP_USERNAME }}
+
+          # The FTP password
+          password: ${{ secrets.FTP_PASSWORD }}
+
+          # The path on your server where the files should be uploaded.
+          server-dir: ${{ secrets.SERVER_DIR }}
+          
+          # The local folder that contains the built website.
+          # For Vite projects (like yours), this folder is named 'dist'.
+          local-dir: ./dist/
