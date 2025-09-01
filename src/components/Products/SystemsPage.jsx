@@ -3,6 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import styles from "./ProductPage.module.css";
 import AnimateOnScroll from "../common/AnimateOnScroll";
 
+import cam1 from "../../assets/jakub-zerdzicki-GpNaHFeN5bk-unsplash.jpg";
+import cam2 from "../../assets/yosuke-ota-2uyCMNGYhnM-unsplash.jpg";
+
 const systemProducts = [
   {
     id: 1,
@@ -10,7 +13,9 @@ const systemProducts = [
     category: "Access Control",
     application: "Corporate",
     desc: "Secure your premises with advanced fingerprint and facial recognition.",
-    img: "https://picsum.photos/seed/ac1/500/500",
+    // img: "https://picsum.photos/seed/ac1/500/500",
+
+    img: cam1,
     buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
@@ -19,7 +24,8 @@ const systemProducts = [
     category: "Time Attendance",
     application: "Workforce",
     desc: "Automate employee check-in and manage records with ease.",
-    img: "https://picsum.photos/seed/ta1/500/500",
+    // img: "https://picsum.photos/seed/ta1/500/500",
+    img: cam2,
     buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
@@ -28,7 +34,8 @@ const systemProducts = [
     category: "Fire Alarms",
     application: "Safety",
     desc: "Early detection and automated alerts for maximum protection.",
-    img: "https://picsum.photos/seed/fa1/500/500",
+    // img: "https://picsum.photos/seed/fa1/500/500",
+img: cam1,
     buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
@@ -37,7 +44,8 @@ const systemProducts = [
     category: "Smart Devices",
     application: "Residential",
     desc: "Control all your smart security devices from a single, intuitive interface.",
-    img: "https://picsum.photos/seed/sh1/500/500",
+    // img: "https://picsum.photos/seed/sh1/500/500",
+    img: cam2,
     buyNowUrl: "https://kirbgebeya.com/products",
   },
 ];

@@ -30,13 +30,16 @@
 import React from "react";
 import styles from "./HeroSection.module.css";
 
+import videoSource from "../../assets/14285055_1920_1080_25fps.mp4";
+
 const HeroSection = () => {
   return (
     <section className={styles.hero}>
       {/* Video Background with the new, relevant video */}
       <video autoPlay loop muted playsInline className={styles.videoBackground}>
         <source
-          src="https://www.w3schools.com/html/mov_bbb.mp4"
+          // src="https://www.w3schools.com/html/mov_bbb.mp4"
+          src={videoSource}
           type="video/mp4"
         />
       </video>

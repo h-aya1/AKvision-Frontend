@@ -332,7 +332,7 @@
   width: max-content;
   animation: marquee 40s linear infinite;
 }
-.partnerLogo {
+/* .partnerLogo {
   height: 40px;
   margin: 0 40px;
   filter: grayscale(100%);
@@ -341,8 +341,25 @@
   display: grid;
   place-items: center;
   transition: filter 0.3s ease, opacity 0.3s ease;
+} */
+
+.partnerLogo {
+  height: 60px; /* You can adjust this to your desired height */
+  margin: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.marqueeTrack:hover .partnerLogo {
+
+.partnerLogo img {
+  max-height: 100%; /* Ensure image fits container height */
+  width: auto;      /* Maintain aspect ratio */
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.marqueeTrack:hover .partnerLogo img {
   filter: grayscale(0%);
   opacity: 1;
 }

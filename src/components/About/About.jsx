@@ -10,6 +10,15 @@ import Counter from "../common/Counter"; // <-- IMPORT THE NEW COUNTER
 import "swiper/css";
 import "swiper/css/navigation";
 
+
+  import cam1 from "../../assets/DSC02547.jpg";
+  import cam2 from "../../../public/10001.jpg";
+  import cam3 from "../../../public/10002.png";
+  import cam4 from "../../../public/10003.jpg";
+  import cam5 from "../../../public/10005.jpg";
+  import cam6 from "../../../public/io.jpg";
+  import cam7 from "../../../public/10004.png";
+
 // Data with the '+' removed from the value
 const stats = [
   { value: 15, label: "Years Of Experience" },
@@ -39,14 +48,16 @@ const team = [
     img: "https://picsum.photos/seed/eng/400/500",
   },
 ];
+// Corrected partners array
 const partners = [
-  { name: "Intaz", src: "/path/to/intaz.svg" },
-  { name: "Qanf", src: "/path/to/qanf.svg" },
-  { name: "Mano", src: "/path/to/mano.svg" },
-  { name: "Inova", src: "/path/to/inova.svg" },
-  { name: "Art & Design", src: "/path/to/artdesign.svg" },
-  { name: "Studio Pro", src: "/path/to/studiopro.svg" },
+  { name: "Zemzem", src: cam2 },
+  { name: "Boston Spa", src: cam3 },
+  { name: "Adika Taxi", src: cam4 },
+  { name: "DH Geda", src: cam5 },
+  { name: "Garad MAll", src: cam7 },
+  { name: "Addis Ababa Police", src: cam6 },
 ];
+
 
 const About = () => {
   return (
@@ -77,7 +88,8 @@ const About = () => {
         <div className={`container ${styles.inspiringGrid}`}>
           <AnimateOnScroll className={styles.inspiringImages}>
             <img
-              src="https://picsum.photos/seed/about-main/400/600"
+              // src="https://picsum.photos/seed/about-main/400/600"
+              src={cam1}
               alt="Modern Building"
               className={styles.img1}
             />
@@ -224,7 +236,7 @@ const About = () => {
           <div className={styles.marqueeTrack}>
             {[...partners, ...partners].map((p, i) => (
               <div key={i} className={styles.partnerLogo}>
-                {p.name}
+                <img src={p.src} alt={p.name} />
               </div>
             ))}
           </div>

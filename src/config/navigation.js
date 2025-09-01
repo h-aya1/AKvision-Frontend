@@ -106,6 +106,11 @@
 
 export const mainNavigation = [
   {
+    id: "Home",
+    label: "Home",
+    path: "/",
+  },
+  {
     id: "products",
     label: "Products",
     path: "/products", // You can create a general products overview page for this link later

@@ -75,32 +75,36 @@ const FaqChatPage = () => {
 
       <div className={styles.tabContainer}>
         <div className={styles.tabs}>
-          <button 
-            className={`${styles.tabButton} ${activeTab === 'faq' ? styles.activeTab : ''}`}
-            onClick={() => handleTabChange('faq')}
+          <button
+            className={`${styles.tabButton} ${
+              activeTab === "faq" ? styles.activeTab : ""
+            }`}
+            onClick={() => handleTabChange("faq")}
           >
             Frequently Asked Questions
           </button>
-          <button 
-            className={`${styles.tabButton} ${activeTab === 'chat' ? styles.activeTab : ''}`}
-            onClick={() => handleTabChange('chat')}
+          <button
+            className={`${styles.tabButton} ${
+              activeTab === "chat" ? styles.activeTab : ""
+            }`}
+            onClick={() => handleTabChange("chat")}
           >
             Live Chat Support
           </button>
         </div>
 
         <div className={styles.tabContent}>
-          {activeTab === 'faq' ? (
+          {activeTab === "faq" ? (
             <div className={styles.faqContainer}>
               {faqs.map((faq, index) => (
                 <div key={index} className={styles.faqItem}>
-                  <div 
+                  <div
                     className={styles.faqQuestion}
                     onClick={() => toggleQuestion(index)}
                   >
                     <h3>{faq.question}</h3>
                     <span className={styles.faqToggle}>
-                      {activeQuestion === index ? '−' : '+'}
+                      {activeQuestion === index ? "−" : "+"}
                     </span>
                   </div>
                   {activeQuestion === index && (
@@ -115,13 +119,15 @@ const FaqChatPage = () => {
             <div className={styles.chatContainer}>
               <div className={styles.chatHistory}>
                 {chatHistory.map((chat, index) => (
-                  <div 
-                    key={index} 
-                    className={`${styles.chatMessage} ${chat.sender === 'user' ? styles.userMessage : styles.botMessage}`}
+                  <div
+                    key={index}
+                    className={`${styles.chatMessage} ${
+                      chat.sender === "user"
+                        ? styles.userMessage
+                        : styles.botMessage
+                    }`}
                   >
-                    <div className={styles.messageContent}>
-                      {chat.message}
-                    </div>
+                    <div className={styles.messageContent}>{chat.message}</div>
                   </div>
                 ))}
               </div>
@@ -139,7 +145,8 @@ const FaqChatPage = () => {
               </form>
               <p className={styles.chatNote}>
                 Our support agents are available Monday-Friday, 9am-6pm EST.
-                Outside these hours, please leave a message and we'll respond on the next business day.
+                Outside these hours, please leave a message and we'll respond on
+                the next business day.
               </p>
             </div>
           )}
@@ -148,11 +155,20 @@ const FaqChatPage = () => {
 
       <div className={styles.contactInfo}>
         <h3>Still Need Help?</h3>
-        <p>If you can't find the answer you're looking for, please contact us through one of our other support channels:</p>
+        <p>
+          If you can't find the answer you're looking for, please contact us
+          through one of our other support channels:
+        </p>
         <div className={styles.supportLinks}>
-          <a href="/contact/technical" className={styles.supportLink}>Technical Support</a>
-          <a href="/contact/sales" className={styles.supportLink}>Sales Support</a>
-          <a href="tel:+15551234567" className={styles.supportLink}>Call Us: +1 (555) 123-4567</a>
+          <a href="/contact/technical" className={styles.supportLink}>
+            Technical Support
+          </a>
+          <a href="/contact/sales" className={styles.supportLink}>
+            Sales Support
+          </a>
+          <a href="tel:0950353535/0950363636" className={styles.supportLink}>
+            Call Us: 0950353535/0950363636
+          </a>
         </div>
       </div>
     </div>

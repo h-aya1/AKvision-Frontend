@@ -3,6 +3,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import styles from "./ProductPage.module.css";
 import AnimateOnScroll from "../common/AnimateOnScroll";
 
+import cam1 from "../../assets/close-up-network-cable.jpg";
+import cam2 from "../../assets/electrical-cable-energy-technology-equipment-isolated-white.jpg";
+import cam3 from "../../assets/usb-cable-plug-isolated-white-background.jpg";
+import cam4 from "../../assets/6138mPynu5L.jpg";
+import cam5 from "../../assets/71UF8gP7XML._UF1000,1000_QL80_.jpg";
+
 const switchProducts = [
   {
     id: 1,
@@ -10,7 +16,8 @@ const switchProducts = [
     category: "PoE Switches",
     ports: 8,
     desc: "Power up to 8 devices with this compact and efficient PoE switch.",
-    img: "https://picsum.photos/seed/sw1/500/500",
+    // img: "https://picsum.photos/seed/sw1/500/500",
+    img: cam5,
     buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
@@ -19,7 +26,8 @@ const switchProducts = [
     category: "Routers",
     ports: "N/A",
     desc: "Reliable 4G LTE connectivity for demanding environments.",
-    img: "https://picsum.photos/seed/rt1/500/500",
+    // img: "https://picsum.photos/seed/rt1/500/500",
+    img: cam4,
     buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
@@ -28,7 +36,8 @@ const switchProducts = [
     category: "Cables",
     ports: "N/A",
     desc: "305-meter box of pure copper CAT6 cable for optimal performance.",
-    img: "https://picsum.photos/seed/cb1/500/500",
+    // img: "https://picsum.photos/seed/cb1/500/500",
+    img: cam2,
     buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
@@ -37,7 +46,8 @@ const switchProducts = [
     category: "Monitors",
     ports: "N/A",
     desc: "Ultra HD monitor for crystal-clear surveillance footage.",
-    img: "https://picsum.photos/seed/mon1/500/500",
+    // img: "https://picsum.photos/seed/mon1/500/500",
+    img: cam3,
     buyNowUrl: "https://kirbgebeya.com/products",
   },
 ];

@@ -151,6 +151,14 @@
 import React from "react";
 import styles from "./FeaturedSection.module.css";
 
+
+// ✅ Import your images properly from src/assets
+import cam1 from "../../assets/Picsart_25-08-22_09-59-03-985.jpg";
+import cam2 from "../../assets/Picsart_25-08-22_10-05-50-045.jpg";
+import cam3 from "../../assets/Picsart_25-08-22_10-02-00-821.jpg";
+import cam4 from "../../assets/Picsart_25-08-22_10-05-50-045.jpg";
+import cam5 from "../../assets/DSC02622.jpg";
+
 // Reusable Card Component with the correct structure
 const FeatureCard = ({ image, title, description }) => (
   <div className={styles.card}>
@@ -175,27 +183,32 @@ const FeatureCard = ({ image, title, description }) => (
 const FeaturedSection = () => {
   const features = [
     {
-      img: "https://picsum.photos/seed/p1/800/1000",
+      // img: "../../assets/Picsart_25-08-22_09-59-03-985.jpg",
+      img: cam1,
       title: "AI Network Cameras",
       desc: "High-performance cameras with AI analytics.",
     },
     {
-      img: "https://picsum.photos/seed/p2/800/1000",
+      // img: "../../assets/Picsart_25-08-22_10-05-50-045.jpg",
+      img: cam2,
       title: "Intelligent NVRs",
       desc: "Reliable storage with smart search capabilities.",
     },
     {
-      img: "https://picsum.photos/seed/p3/800/1000",
+      // img: "../../assets/Picsart_25-08-22_10-02-00-821.jpg",
+      img: cam3,
       title: "Access Control",
       desc: "Secure and seamless entry management.",
     },
     {
-      img: "https://picsum.photos/seed/p4/800/1000",
+      // img: "../../assets/Picsart_25-08-22_10-05-50-045.jpg",
+      img: cam4,
       title: "Video Intercom",
       desc: "Crystal-clear communication for any building.",
     },
     {
-      img: "https://picsum.photos/seed/p5/800/1000",
+      // img: "../../assets/DSC02622.jpg",
+      img: cam4,
       title: "PTZ Cameras",
       desc: "Precision pan-tilt-zoom with smart tracking.",
     },

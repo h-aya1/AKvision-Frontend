@@ -3,6 +3,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import styles from "./ProductPage.module.css";
 import AnimateOnScroll from "../common/AnimateOnScroll";
 
+import cam1 from "../../assets/Picsart_25-08-22_09-59-03-985.jpg";
+import cam2 from "../../assets/Picsart_25-08-22_10-05-50-045.jpg";
+import cam3 from "../../assets/Picsart_25-08-22_10-02-00-821.jpg";
+import cam4 from "../../assets/Picsart_25-08-22_10-07-23-381.jpg";
+import cam5 from "../../assets/Picsart_25-08-22_10-00-40-701.jpg";
+import cam6 from "../../assets/Picsart_25-08-22_10-01-18-095.jpg";
+
+
+
 const cameraProducts = [
   {
     id: 1,
@@ -10,7 +19,8 @@ const cameraProducts = [
     category: "Analog Cameras",
     useCase: "Outdoor",
     desc: "Reliable and cost-effective for traditional CCTV setups.",
-    img: "https://picsum.photos/seed/cam1/500/500",
+    // img: "https://picsum.photos/seed/cam1/500/500",
+    img: cam1,
     buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
@@ -19,7 +29,8 @@ const cameraProducts = [
     category: "IP Cameras",
     useCase: "Indoor",
     desc: "Superior image clarity and remote access capabilities.",
-    img: "https://picsum.photos/seed/cam2/500/500",
+    // img: "https://picsum.photos/seed/cam2/500/500",
+    img: cam2,
     buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
@@ -28,7 +39,8 @@ const cameraProducts = [
     category: "Wireless Cameras",
     useCase: "Outdoor",
     desc: "Flexible installation with pan-tilt-zoom functionality.",
-    img: "https://picsum.photos/seed/cam3/500/500",
+    // img: "https://picsum.photos/seed/cam3/500/500",
+    img: cam3,
     buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
@@ -37,7 +49,8 @@ const cameraProducts = [
     category: "Solar Cameras",
     useCase: "Outdoor",
     desc: "Eco-friendly solution for remote area surveillance.",
-    img: "https://picsum.photos/seed/cam4/500/500",
+    // img: "https://picsum.photos/seed/cam4/500/500",
+    img: cam4,
     buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
@@ -46,7 +59,8 @@ const cameraProducts = [
     category: "Dash Cameras",
     useCase: "Vehicle",
     desc: "Capture both the road ahead and the cabin interior.",
-    img: "https://picsum.photos/seed/cam5/500/500",
+    // img: "https://picsum.photos/seed/cam5/500/500",
+    img: cam5,
     buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
@@ -55,7 +69,8 @@ const cameraProducts = [
     category: "PTZ Cameras",
     useCase: "Indoor",
     desc: "Ultra HD resolution with powerful zoom and smart tracking.",
-    img: "https://picsum.photos/seed/cam6/500/500",
+    // img: "https://picsum.photos/seed/cam6/500/500",
+    img: cam6,
     buyNowUrl: "https://kirbgebeya.com/products",
   },
 ];
@@ -79,7 +94,7 @@ const CamerasPage = () => {
         className={styles.heroSection}
         style={{
           backgroundImage:
-            "url('https://picsum.photos/seed/camera-hero/1920/1080')",
+            "url('https://img.freepik.com/premium-photo/cctv-security-camera-dark-background_840989-5159.jpg')",
         }}
       >
         <div className={styles.heroOverlay}></div>

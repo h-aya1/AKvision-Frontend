@@ -89,27 +89,34 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./CoreTechnologies.module.css";
 
+import img1 from "../../assets/cam.png";
+import img2 from "../../assets/DSC02606.jpg";
+import img3 from "../../assets/Picsart_25-08-22_10-01-18-095.jpg";
+
 const technologies = [
   {
     name: "AcuSense",
     desc: "Utilizing deep learning algorithms, AcuSense technology pinpoints human and vehicle targets, filtering out false alarms with remarkable accuracy.",
     longDesc:
       "Focus on what truly matters. Our advanced AI distinguishes between genuine threats and irrelevant movements, providing you with alerts that are both timely and precise.",
-    imgUrl: "https://picsum.photos/seed/blueprint1/1200/800",
+    // imgUrl: "https://picsum.photos/seed/blueprint1/1200/800",
+    imgUrl: img1,
   },
   {
     name: "ColorVu",
     desc: "Captures vivid, full-color video 24/7, even in extremely low-light conditions, turning night into day.",
     longDesc:
       "Say goodbye to grainy black-and-white footage. ColorVu technology uses advanced sensors and supplemental lighting to render clear, colorful details around the clock.",
-    imgUrl: "https://picsum.photos/seed/blueprint2/1200/800",
+    // imgUrl: "https://picsum.photos/seed/blueprint2/1200/800",
+    imgUrl: img2,
   },
   {
     name: "Smart Hybrid Light",
     desc: "Intelligently switches between IR and white light, providing discreet surveillance and active deterrence.",
     longDesc:
       "Get the best of both worlds. The system remains covert with infrared until an event is detected, at which point a powerful white light activates to capture color detail and deter intruders.",
-    imgUrl: "https://picsum.photos/seed/blueprint3/1200/800",
+    // imgUrl: "https://picsum.photos/seed/blueprint3/1200/800",
+    imgUrl: img3,
   },
 ];
 

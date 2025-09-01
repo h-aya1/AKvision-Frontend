@@ -348,16 +348,21 @@ import "swiper/css";
 
 import styles from "./Newsroom.module.css";
 
+import cam1 from "../../assets/14285055_1920_1080_25fps.mp4";
+import cam2 from "../../assets/3010403-hd_1920_1080_24fps.mp4";
+import cam3 from "../../assets/3719164-hd_1920_1080_24fps.mp4";
+
+
 // Using reliable demo videos that are guaranteed to work
 const videoItems = [
-  { id: 1, url: "https://www.w3schools.com/html/mov_bbb.mp4" },
+  { id: 1, url: cam1 },
   {
     id: 2,
-    url: "https://www.w3schools.com/html/mov_bbb.mp4",
+    url: cam2,
   },
   {
     id: 3,
-    url: "https://www.w3schools.com/html/mov_bbb.mp4",
+    url: cam3,
   },
 ];
 

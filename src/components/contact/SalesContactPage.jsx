@@ -48,7 +48,7 @@ const SalesContactPage = () => {
         <div className={styles.successMessage}>
           <h2>Thank you for your inquiry!</h2>
           <p>Our sales team will contact you shortly.</p>
-          <button 
+          <button
             className={styles.newInquiryButton}
             onClick={() => setSubmitted(false)}
           >
@@ -147,9 +147,16 @@ const SalesContactPage = () => {
 
       <div className={styles.contactInfo}>
         <h3>Contact our sales team directly</h3>
-        <p><strong>Email:</strong> sales@akvision.com</p>
-        <p><strong>Phone:</strong> +1 (555) 123-4567</p>
-        <p><strong>Hours:</strong> Monday - Friday, 9am - 5pm EST</p>
+        <p>
+          <strong>Email:</strong> akvistion.et@gmail.com
+        </p>
+        <p>
+          <strong>Phone:</strong> 0950353535/0950363636
+        </p>
+        <p>
+          <strong>Hours:</strong> Mon-Fri: 9:00 AM - 6:00 PM Sat: 10:00 AM -
+          2:00 PM
+        </p>
       </div>
     </div>
   );

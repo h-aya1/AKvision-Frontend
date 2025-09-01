@@ -1,50 +1,50 @@
-import React, { useState } from 'react';
-import styles from './ContactPages.module.css';
+import React, { useState } from "react";
+import styles from "./ContactPages.module.css";
 
 const TechnicalSupportPage = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    productModel: '',
-    serialNumber: '',
-    issueType: '',
-    description: '',
-    attachFile: null
+    name: "",
+    email: "",
+    phone: "",
+    productModel: "",
+    serialNumber: "",
+    issueType: "",
+    description: "",
+    attachFile: null,
   });
 
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevData => ({
+    setFormData((prevData) => ({
       ...prevData,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleFileChange = (e) => {
-    setFormData(prevData => ({
+    setFormData((prevData) => ({
       ...prevData,
-      attachFile: e.target.files[0]
+      attachFile: e.target.files[0],
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Here you would typically send the data to your backend
-    console.log('Support ticket submitted:', formData);
+    console.log("Support ticket submitted:", formData);
     setSubmitted(true);
     // Reset form after submission
     setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      productModel: '',
-      serialNumber: '',
-      issueType: '',
-      description: '',
-      attachFile: null
+      name: "",
+      email: "",
+      phone: "",
+      productModel: "",
+      serialNumber: "",
+      issueType: "",
+      description: "",
+      attachFile: null,
     });
   };
 
@@ -52,15 +52,24 @@ const TechnicalSupportPage = () => {
     <div className={styles.contactPageContainer}>
       <div className={styles.contactHeader}>
         <h1>Technical Support</h1>
-        <p>Need help with your AK Vision products? Our technical team is here to assist you.</p>
+        <p>
+          Need help with your AK Vision products? Our technical team is here to
+          assist you.
+        </p>
       </div>
 
       {submitted ? (
         <div className={styles.successMessage}>
           <h2>Support ticket submitted!</h2>
-          <p>Our technical team will review your issue and get back to you as soon as possible.</p>
-          <p>Your ticket reference number: <strong>#{Math.floor(Math.random() * 900000) + 100000}</strong></p>
-          <button 
+          <p>
+            Our technical team will review your issue and get back to you as
+            soon as possible.
+          </p>
+          <p>
+            Your ticket reference number:{" "}
+            <strong>#{Math.floor(Math.random() * 900000) + 100000}</strong>
+          </p>
+          <button
             className={styles.newInquiryButton}
             onClick={() => setSubmitted(false)}
           >
@@ -177,7 +186,9 @@ const TechnicalSupportPage = () => {
               onChange={handleFileChange}
               className={styles.fileInput}
             />
-            <p className={styles.fileNote}>Max file size: 10MB. Supported formats: JPG, PNG, PDF</p>
+            <p className={styles.fileNote}>
+              Max file size: 10MB. Supported formats: JPG, PNG, PDF
+            </p>
           </div>
 
           <button type="submit" className={styles.submitButton}>
@@ -191,12 +202,15 @@ const TechnicalSupportPage = () => {
         <div className={styles.supportOptions}>
           <div className={styles.supportOption}>
             <h4>Knowledge Base</h4>
-            <p>Browse our <a href="/support/knowledge-base">Knowledge Base</a> for answers to common questions.</p>
+            <p>
+              Browse our <a href="/contact/faq">Knowledge Base</a> for answers
+              to common questions.
+            </p>
           </div>
           <div className={styles.supportOption}>
             <h4>Phone Support</h4>
-            <p>Technical Support: +1 (555) 987-6543</p>
-            <p>Hours: Monday - Friday, 8am - 8pm EST</p>
+            <p>Technical Support: 0950353535/0950363636</p>
+            <p>Hours: Mon-Fri: 9:00 AM - 6:00 PM Sat: 10:00 AM - 2:00 PM</p>
           </div>
         </div>
       </div>

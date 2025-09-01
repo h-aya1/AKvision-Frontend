@@ -3,6 +3,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import styles from "./ProductPage.module.css";
 import AnimateOnScroll from "../common/AnimateOnScroll";
 
+
+import cam1 from "../../assets/dvr4.jpeg";
+import cam2 from "../../assets/dvr5.jpeg";
+import cam3 from "../../assets/dvr1.jpeg";
+import cam4 from "../../assets/dvr3.jpeg";
+import cam5 from "../../assets/drv2.jpeg";
 const recorderProducts = [
   {
     id: 1,
@@ -10,7 +16,8 @@ const recorderProducts = [
     category: "NVR",
     channels: 8,
     desc: "High-performance recording with 4K output.",
-    img: "https://picsum.photos/seed/nvr1/500/500",
+    // img: "https://picsum.photos/seed/nvr1/500/500",
+    img: cam4,
     buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
@@ -19,7 +26,8 @@ const recorderProducts = [
     category: "DVR",
     channels: 16,
     desc: "Supports both analog and IP cameras for flexible upgrades.",
-    img: "https://picsum.photos/seed/dvr1/500/500",
+    // img: "https://picsum.photos/seed/dvr1/500/500",
+    img: cam2,
     buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
@@ -28,7 +36,8 @@ const recorderProducts = [
     category: "Storage",
     channels: "N/A",
     desc: "Engineered for 24/7 reliability and data integrity.",
-    img: "https://picsum.photos/seed/hdd1/500/500",
+    // img: "https://picsum.photos/seed/hdd1/500/500",
+    img: cam3,
     buyNowUrl: "https://kirbgebeya.com/products",
   },
   {
@@ -37,7 +46,8 @@ const recorderProducts = [
     category: "NVR",
     channels: 32,
     desc: "Advanced AI features for smart search and analytics.",
-    img: "https://picsum.photos/seed/nvr2/500/500",
+    // img: "https://picsum.photos/seed/nvr2/500/500",
+    img: cam1,
     buyNowUrl: "https://kirbgebeya.com/products",
   },
 ];
@@ -63,7 +73,7 @@ const RecordersPage = () => {
         className={styles.heroSection}
         style={{
           backgroundImage:
-            "url('https://picsum.photos/seed/recorder-hero/1920/1080')",
+            "url('https://media.istockphoto.com/id/477723398/es/foto/grabador-de-v%C3%ADdeo-digital-dvr-port%C3%A1til.jpg?s=612x612&w=0&k=20&c=ZwCa43hNPtgD9qJ1VPVUQMy2SJDkpeYNEac6FD0AkV8=')",
         }}
       >
         <div className={styles.heroOverlay}></div>

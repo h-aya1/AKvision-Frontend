@@ -2,6 +2,12 @@ import { useState } from 'react';
 import { CalendarIcon, UserIcon, ClockIcon, MagnifyingGlassIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 import styles from './Blog.module.css';
 
+import img1 from "../../assets/DSC02565.jpg";
+import img2 from "../../assets/dvr4.jpeg";
+import img3 from "../../assets/6138mPynu5L.jpg";
+import img4 from "../../assets/DSC02602.jpg";
+import img5 from "../../assets/Picsart_25-08-22_10-05-50-045.jpg";
+
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -10,7 +16,8 @@ const Blog = () => {
       id: 1,
       title: 'The Future of AI in Video Surveillance',
       excerpt: 'Explore how artificial intelligence is revolutionizing the security industry with smart detection and analytics.',
-      image: 'https://picsum.photos/seed/1/600/400',
+      // image: 'https://picsum.photos/seed/1/600/400',
+      image: img1,
       category: 'Technology',
       author: 'John Smith',
       date: 'March 15, 2024',
@@ -20,7 +27,8 @@ const Blog = () => {
       id: 2,
       title: 'Top 5 Security Tips for Retail Stores',
       excerpt: 'Essential security measures every retail business should implement to protect assets and employees.',
-      image: 'https://picsum.photos/seed/2/600/400',
+      // image: 'https://picsum.photos/seed/2/600/400',
+      image: img2,
       category: 'Industry',
       author: 'Sarah Johnson',
       date: 'March 10, 2024',
@@ -30,7 +38,8 @@ const Blog = () => {
       id: 3,
       title: 'Understanding IP Camera Resolution Standards',
       excerpt: 'A comprehensive guide to camera resolutions and how to choose the right one for your needs.',
-      image: 'https://picsum.photos/seed/3/600/400',
+      // image: 'https://picsum.photos/seed/3/600/400',
+      image: img3,
       category: 'Guide',
       author: 'Michael Chen',
       date: 'March 5, 2024',
@@ -40,7 +49,8 @@ const Blog = () => {
       id: 4,
       title: 'Enhancing Workplace Safety with Advanced CCTV',
       excerpt: 'Discover how modern CCTV systems can improve employee safety and prevent workplace incidents.',
-      image: 'https://picsum.photos/seed/4/600/400',
+      // image: 'https://picsum.photos/seed/4/600/400',
+      image: img4,
       category: 'Safety',
       author: 'Emily White',
       date: 'February 28, 2024',
@@ -50,7 +60,8 @@ const Blog = () => {
       id: 5,
       title: 'The Role of Thermal Cameras in Industrial Monitoring',
       excerpt: 'An in-depth look at how thermal imaging is used for predictive maintenance and quality control.',
-      image: 'https://picsum.photos/seed/5/600/400',
+      // image: 'https://picsum.photos/seed/5/600/400',
+      image: img5,
       category: 'Technology',
       author: 'David Green',
       date: 'February 22, 2024',
